@@ -1,21 +1,25 @@
-import React from 'react'
+import React from "react";
 
 const Gamescreen = () => {
-    const boxStyle = {
-        border: 'line',
-        borderWidth: '15px',
-        width: '75%',
-        height: '33%',
-        display: 'block',
-        background: 'red'
+  const boxStyle = {
+    border: "line",
+    borderWidth: "100px",
+    width: "75%",
+    height: "33%",
+    display: "inline",
+    background: "green",
+  };
 
-    }
-    
-    return(
-        <canvas style={boxStyle} >
+  const containerStyle = {
+    width: "100%",
+    textAlign: "center",
+  };
 
-        </canvas>
-    )
-}
+  return (
+    <div style={containerStyle}>
+      <canvas style={boxStyle}></canvas>
+    </div>
+  );
+};
 
-export default Gamescreen
+export default Gamescreen;
