@@ -6,8 +6,6 @@ console.log(gameImage);
 
 const Gamescreen = () => {
   const boxStyle = {
-    border: "line",
-    borderWidth: "100px",
     width: "75%",
     height: "33%",
     display: "inline",
@@ -18,10 +16,16 @@ const Gamescreen = () => {
     textAlign: "center",
   };
 
+  const imgStyle = {
+    borderStyle: "solid",
+    borderWidth: "15px",
+    borderColor: "black",
+  };
+
   return (
     <div style={containerStyle}>
       <div style={boxStyle}>
-        <img src={gameImage} alt="fantasy escape room" />
+        <img style={imgStyle} src={gameImage} alt="fantasy escape room" />
       </div>
     </div>
   );
