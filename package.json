@@ -28,6 +28,7 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
     "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
