@@ -1,9 +1,6 @@
 import React from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
 
-console.log(gameImage);
-// let gameImage = "https://s.yimg.com/aah/yhst-62697111611463/vampires-castle-escape-puzzle-2.jpg";
-
 const Gamescreen = () => {
   const boxStyle = {
     width: "75%",
