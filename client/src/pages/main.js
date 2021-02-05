@@ -5,9 +5,11 @@ import "./main.css";
 const Main = () => {
   return (
     <div>
-      <h1>Welcome to our Escape Game</h1>
-      <p>Play below!</p>
-      <Gamescreen />
+      <div id="mainDiv">
+        <h1>Welcome to our Escape Game</h1>
+        <p>Play below!</p>
+        <Gamescreen />
+      </div>
     </div>
   );
 };

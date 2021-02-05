@@ -11,7 +11,6 @@ const Gamescreen = () => {
     width: "75%",
     height: "33%",
     display: "inline",
-    // backgroundColor: "red",
   };
 
   const containerStyle = {
