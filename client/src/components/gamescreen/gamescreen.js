@@ -1,5 +1,8 @@
 import React from "react";
-import gameImage from "../../assets/escapeRoomBackground.png";
+import gameImage from "../../images/escapeRoomBackground.png";
+
+console.log(gameImage);
+// let gameImage = "https://s.yimg.com/aah/yhst-62697111611463/vampires-castle-escape-puzzle-2.jpg";
 
 const Gamescreen = () => {
   const boxStyle = {
@@ -8,8 +11,7 @@ const Gamescreen = () => {
     width: "75%",
     height: "33%",
     display: "inline",
-    // backgroundImage: { gameImage },
-    backgroundColor: "red",
+    // backgroundColor: "red",
   };
 
   const containerStyle = {
@@ -19,9 +21,9 @@ const Gamescreen = () => {
 
   return (
     <div style={containerStyle}>
-      <canvas style={boxStyle}>
+      <div style={boxStyle}>
         <img src={gameImage} alt="fantasy escape room" />
-      </canvas>
+      </div>
     </div>
   );
 };
