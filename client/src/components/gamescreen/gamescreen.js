@@ -1,4 +1,5 @@
 import React from "react";
+import gameImage from "../../assets/escapeRoomBackground.png";
 
 const Gamescreen = () => {
   const boxStyle = {
@@ -7,7 +8,8 @@ const Gamescreen = () => {
     width: "75%",
     height: "33%",
     display: "inline",
-    background: "green",
+    // backgroundImage: { gameImage },
+    backgroundColor: "red",
   };
 
   const containerStyle = {
@@ -17,7 +19,9 @@ const Gamescreen = () => {
 
   return (
     <div style={containerStyle}>
-      <canvas style={boxStyle}></canvas>
+      <canvas style={boxStyle}>
+        <img src={gameImage} alt="fantasy escape room" />
+      </canvas>
     </div>
   );
 };
