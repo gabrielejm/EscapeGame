@@ -1,0 +1,7 @@
+.button {
+    padding: 2%;
+    border-width: 5px;
+    border-radius: 45%;
+    margin-left: 25px;
+    display: inline-block;
+}
