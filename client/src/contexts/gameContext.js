@@ -21,5 +21,9 @@ export const GameContextProvider = props => {
       isSolved: false,
     },
   ]);
-  return <GameContext.Provider>{props.children}</GameContext.Provider>;
+  return (
+    <GameContext.Provider value={[status, setStatus]}>
+      {props.children}
+    </GameContext.Provider>
+  );
 };

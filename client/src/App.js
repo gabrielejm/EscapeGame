@@ -6,9 +6,10 @@ import { GameContext } from "./contexts/gameContext";
 
 const App = () => {
   return (
-    <GameContext>
-      <Main />
-    </GameContext>
+    // <GameContext>
+    //   <Main />
+    // </GameContext>
+    <Main />
   );
 };
 
