@@ -13,7 +13,6 @@ const Gamescreen = () => {
     
     return(
         <div style={boxStyle} >
-            <ButtonPuzzle />
         </div>
     )
 }
