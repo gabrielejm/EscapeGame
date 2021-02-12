@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useContext } from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContext } from "../../contexts/gameContext";
@@ -68,3 +69,25 @@ const Gamescreen = () => {
 };
 
 export default Gamescreen;
+=======
+import React from 'react'
+import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle'
+
+const Gamescreen = () => {
+    const boxStyle = {
+        border: 'line',
+        borderWidth: '15px',
+        width: '75%',
+        height: '33%',
+        display: 'block',
+
+    }
+    
+    return(
+        <div style={boxStyle} >
+        </div>
+    )
+}
+
+export default Gamescreen
+>>>>>>> main

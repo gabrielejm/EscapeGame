@@ -1,6 +1,7 @@
+import "./main.css";
 import React, { useState, useEffect } from "react";
 import Gamescreen from "../components/gamescreen/gamescreen";
-import "./main.css";
+import ButtonPuzzle from "../components/ButtonPuzzle/ButtonPuzzle";
 
 const Main = () => {
   return (
