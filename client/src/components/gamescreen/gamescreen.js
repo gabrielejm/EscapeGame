@@ -1,5 +1,6 @@
 import React from 'react'
 import './gamescreen.css'
+import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle'
 
 const Gamescreen = () => {
     const boxStyle = {
@@ -8,14 +9,12 @@ const Gamescreen = () => {
         width: '75%',
         height: '33%',
         display: 'block',
-        background: 'red'
 
     }
     
     return(
-        <canvas style={boxStyle} >
-
-        </canvas>
+        <div style={boxStyle} >
+        </div>
     )
 }
 

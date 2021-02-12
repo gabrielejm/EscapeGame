@@ -1,0 +1,16 @@
+.button {
+    padding: 2%;
+    border-width: 5px;
+    border-radius: 45%;
+    margin-left: 25px;
+    display: inline-block;
+}
+
+.submit {
+    margin-left: 14%;
+    margin-top: 2%;
+    background-color: gold;
+    width: 10%;
+    height: 30px;
+
+}

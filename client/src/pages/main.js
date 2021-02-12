@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Gamescreen from '../components/gamescreen/gamescreen'
 import matchingGame from '../components/matchingGame/matching'
 import { useSpring, animated as a } from 'react-spring';
+import ButtonPuzzle from '../components/ButtonPuzzle/ButtonPuzzle'
 
 // 3 games
 // if completed, return true and update global state?
