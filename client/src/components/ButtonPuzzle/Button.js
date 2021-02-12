@@ -8,6 +8,7 @@ const Button = ({button}) => {
 
     const toggle = () => {
         puzzle.dispatch(button)
+        console.log('button', button)
     }
     return (
         <button className="button" onClick={toggle} style={{backgroundColor: color}}></button>

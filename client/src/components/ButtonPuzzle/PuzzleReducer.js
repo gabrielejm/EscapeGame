@@ -7,31 +7,31 @@ export const puzzleReducer = (state, action) => {
             button1 === 'green' ? color = 'red' : color = 'green'
             return {
                 ...state,
-                button1: [color]
+                button1: color
             }
         case 'button2':
             button2 === 'green' ? color = 'red' : color = 'green'
             return {
                 ...state,
-                button2: [color]
+                button2: color
             }
         case 'button3':
             button3 === 'green' ? color = 'red' : color = 'green'
             return {
                 ...state,
-                button3: [color]
+                button3: color
             }
         case 'button4':
             button4 === 'green' ? color = 'red' : color = 'green'
             return {
                 ...state,
-                button4: [color]
+                button4: color
             }
         case 'button5':
             button5 === 'green' ? color = 'red' : color = 'green'
             return {
                 ...state,
-                button5: [color]
+                button5: color
             }
         default:
             return state
