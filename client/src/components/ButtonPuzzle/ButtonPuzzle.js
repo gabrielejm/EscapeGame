@@ -4,10 +4,6 @@ import Submit from "./submit";
 import PuzzleContextProvider from './PuzzleContext'
 
 const ButtonPuzzle = () => {
-    const submitAnswer = (()=> {
-        const correctAnswer = ['green', 'red', 'red', 'green', 'green']
-    })
-
     return (
     <PuzzleContextProvider>
         <Button button = 'button1'/>
