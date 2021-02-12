@@ -1,24 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Button from './Button'
 import Submit from "./submit";
+import PuzzleContextProvider from './PuzzleContext'
 
 const ButtonPuzzle = () => {
-    const colors = ['red', 'green']
-    const newColor = (arr) =>{
-        return arr[Math.floor(Math.random()* Math.floor(arr.length))]
-      }
+    const submitAnswer = (()=> {
+        const correctAnswer = ['green', 'red', 'red', 'green', 'green']
+    })
 
     return (
-    <>
-        <Button color = {newColor(colors)}/>
-        <Button color = {newColor(colors)}/>
-        <Button color = {newColor(colors)}/>
-        <Button color = {newColor(colors)}/>
-        <Button color = {newColor(colors)}/>
+    <PuzzleContextProvider>
+        <Button button = 'button1'/>
+        <Button button = 'button2'/>
+        <Button button = 'button3'/>
+        <Button button = 'button4'/>
+        <Button button = 'button5'/>
         <div>
         <Submit />
         </div>
-    </>
+    </PuzzleContextProvider>
     )
 };
 

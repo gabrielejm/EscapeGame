@@ -1,19 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, { useContext } from 'react'
 import './ButtonPuzzle.css'
+import {PuzzleContext} from './PuzzleContext'
 
-const Button = ({color}) => {
-    const [backColor, setBackColor] = useState()
-
-    useEffect(()=> {
-        setBackColor(color)
-    }, [])
+const Button = ({button}) => {
+    const puzzle = useContext(PuzzleContext)
+    const color = puzzle.puzzleAttributes[button]
 
     const toggle = () => {
-        backColor === 'green' ? setBackColor('red') : setBackColor('green')
+        puzzle.dispatch(button)
     }
-
     return (
-        <button className="button" onClick={toggle} style={{backgroundColor: backColor}}></button>
+        <button className="button" onClick={toggle} style={{backgroundColor: color}}></button>
     )
 }
 

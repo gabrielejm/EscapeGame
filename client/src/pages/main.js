@@ -8,7 +8,6 @@ const Main = () => {
             <h1>Welcome to our Escape Game</h1>
             <p>Play below!</p>
             <Gamescreen />
-            {/* <ButtonPuzzle /> */}
         </div>
     )
 }
