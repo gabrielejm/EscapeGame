@@ -1,4 +1,5 @@
 import React from 'react'
+import './gamescreen.css'
 
 const Gamescreen = () => {
     const boxStyle = {
