@@ -5,6 +5,7 @@ import { GameContext } from "../../contexts/gameContext";
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
   const boxStyle = {
+    overflow: "hidden",
     width: "75%",
     height: "33%",
     display: "inline",
@@ -17,20 +18,26 @@ const Gamescreen = () => {
   };
 
   const imgStyle = {
+    marginLeft: "12.5%",
+    position: "absolute",
+    height: "70%",
+    width: "75%",
     borderStyle: "solid",
     borderWidth: "15px",
     borderColor: "black",
+    backgroundImage: "url(" + gameImage + ")",
+    backgroundSize: "100% 100%",
   };
 
   const chestClickStyle = {
     backgroundColor: "red",
     opacity: 0.5,
     borderRadius: "30px",
-    position: "fixed",
-    width: "200px",
-    height: "145px",
-    right: "650px",
-    top: "855px",
+    position: "absolute",
+    width: "18%",
+    height: "15%",
+    right: "8%",
+    top: "85%",
   };
 
   const armorClickStyle = {
@@ -52,12 +59,11 @@ const Gamescreen = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <div style={boxStyle}>
+    <>
+      <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
-        <img style={imgStyle} src={gameImage} alt="fantasy escape room" />
       </div>
-    </div>
+    </>
   );
 };
 
