@@ -3,6 +3,7 @@ import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContext } from "../../contexts/gameContext";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import { ModalContextProvider } from "../Modal/ModalContext";
 
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
@@ -70,13 +71,13 @@ const Gamescreen = () => {
   }
 
   return (
-    <>
+    <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
         <ButtonPuzzle />
         <Modal />
       </div>
-    </>
+    </ModalContextProvider>
   );
 };
 

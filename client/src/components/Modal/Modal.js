@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {ModalContext} from './ModalContext'
+let modal 
 
 const Modal = () => {
+    modal = useContext(ModalContext)
+    console.log(modal)
     //Styling the Pieces of the Component
     const image = 'https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png'
     const buttonStyle = {
@@ -34,7 +38,7 @@ const Modal = () => {
     return (
         <div style = {modalStyle} id = "modal">
             <button style = {buttonStyle} onClick = {hide}> X </button>
-            <p style = {textStyle}>Putting in Some Text</p>
+            <p style = {textStyle} id = "text"></p>
         </div>
     )
 }
