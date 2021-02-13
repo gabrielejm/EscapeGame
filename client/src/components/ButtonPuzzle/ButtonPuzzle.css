@@ -1,5 +1,15 @@
+.main {
+    right: 25%;
+    top: 34%;
+    background-color: chartreuse;
+    width: 50%;
+    height: 25%;
+    position: absolute;
+    padding: 10px;
+}
+
 .button {
-    padding: 2%;
+    padding: 4%;
     border-width: 5px;
     border-radius: 45%;
     margin-left: 25px;
@@ -7,10 +17,10 @@
 }
 
 .submit {
-    margin-left: 14%;
-    margin-top: 2%;
+    margin-left: 40%;
+    margin-top: 10%;
     background-color: gold;
-    width: 10%;
+    width: 20%;
     height: 30px;
 
 }

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContext } from "../../contexts/gameContext";
 import Modal from "../Modal/Modal"
+import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
@@ -59,11 +60,21 @@ const Gamescreen = () => {
     height: "50px",
   };
 
+  const puzzleStyling = {
+    right: "29%",
+    top: "34%",
+    backgroundColor: "chartreuse",
+    width: "50%",
+    height: "25%",
+    position: "absolute"
+  }
+
   return (
     <>
       <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
-        <Modal></Modal>
+        <ButtonPuzzle />
+        <Modal />
       </div>
     </>
   );

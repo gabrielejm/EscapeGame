@@ -11,11 +11,14 @@ const Modal = () => {
         backgroundPosition: "center",
         position: "absolute",
         right: "29%",
-        top: "34%"
+        top: "34%",
+        visibility: "hidden"
     }
 
+
     return (
-        <div style = {modalStyle}>
+        <div style = {modalStyle} id = "modal">
+            <p>Random Text</p>
         </div>
     )
 }

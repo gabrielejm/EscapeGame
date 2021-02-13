@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
+import Modal from '../Modal/Modal'
 import {PuzzleContext} from './PuzzleContext'
 
 const Submit = () => {
+    let modal
     //Calls Puzzle Context
     const puzzle = useContext(PuzzleContext)
     //Pulls Button Colors from Context
@@ -15,7 +17,8 @@ const Submit = () => {
            button3 === correctAnswer[2] &&
            button4 === correctAnswer[3] &&
            button5 === correctAnswer[4]){
-               alert("You are correct")
+              document.getElementById('modal').style.visibility = "visible"
+              document.getElementById('buttonPuzzle').style.visibility = "hidden"
            } else {
                alert("Nope")
            }
