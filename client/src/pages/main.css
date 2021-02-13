@@ -1,0 +1,23 @@
+h1,
+p {
+  text-align: center;
+}
+
+html {
+  overflow: hidden;
+  background-color: #2b4162;
+  background-image: linear-gradient(
+    315deg,
+    #12100e 7%,
+    #2b4162 65%,
+    #12100e 93%
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#mainDiv {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
