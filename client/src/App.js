@@ -1,10 +1,12 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import './App.css';
 import Main from './pages/main';
 
 const App = () => {
-    return (
+  return (
+    <div>
       <Main />
+    </div>
     );
 }
 

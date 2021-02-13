@@ -1,49 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import Gamescreen from '../components/gamescreen/gamescreen'
-import matchingGame from '../components/matchingGame/matching'
-import { useSpring, animated as a } from 'react-spring';
 import ButtonPuzzle from '../components/ButtonPuzzle/ButtonPuzzle'
+import MatchingGame from '../components/matchingGame/matching'
 
 // 3 games
 // if completed, return true and update global state?
 // 1/3 completed displayed on screen
 const Main = () => {
-    // <div>
-    //   <div class='match-game'>
-    //     <matchingGame />
-    //     <buttonGame />
-    //   </div>
-    //   <div>
-    //     <h1>Welcome to our Escape Game</h1>
-    //     <p>Play below!</p>
-    //     <Gamescreen />
-    //   </div>
-    // </div>
-  const [highScore, setHighScore] = useState(0)
 
   useEffect(() => {
-    // Loads when the game starts
+    // Load in a high score or something here?
   }, [])
 
   return (
     <div>
       <div className="container">
-        <h1>Memory Game</h1>
-        <div>High Score: {highScore}</div>
+        <h1>Matching Game</h1>
       </div>
+        <MatchingGame />
 
-      <MemoryGame
-        highScore={highScore}
-        setHighScore={setHighScore}
-      />
+     
   
     </div>
   )
-
-  function MemoryGame(props) {
-    return <div>Game goes here</div> 
-
-  }
 
 }
 export default Main

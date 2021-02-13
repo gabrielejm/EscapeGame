@@ -1,5 +1,5 @@
 import React from 'react'
-import './gamescreen.css'
+// import './gamescreen.css'
 import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle'
 
 const Gamescreen = () => {
