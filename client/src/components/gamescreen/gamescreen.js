@@ -1,22 +1,9 @@
-<<<<<<< HEAD
 import React, { useState, useContext } from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContext } from "../../contexts/gameContext";
 
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
-  const boxStyle = {
-    overflow: "hidden",
-    width: "75%",
-    height: "33%",
-    display: "inline",
-  };
-
-  const containerStyle = {
-    width: "100%",
-    height: "100%",
-    textAlign: "center",
-  };
 
   const imgStyle = {
     marginLeft: "12.5%",
@@ -37,57 +24,85 @@ const Gamescreen = () => {
     position: "absolute",
     width: "18%",
     height: "15%",
-    right: "8%",
-    top: "85%",
+    right: "7%",
+    top: "86%",
+    transform: "rotate(" + "335deg" + ")",
+    cursor: "pointer",
   };
 
   const armorClickStyle = {
     backgroundColor: "purple",
-    width: "50px",
-    height: "50px",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "5%",
+    height: "20%",
+    left: "28%",
+    top: "50%",
+    cursor: "pointer",
   };
 
-  const shieldClickStyle = {
+  const faceClickStyle = {
     backgroundColor: "orange",
-    width: "50px",
-    height: "50px",
+    opacity: 0.5,
+    position: "absolute",
+    width: "20%",
+    height: "15%",
+    left: "43%",
+    top: "39%",
+    cursor: "pointer",
   };
 
-  const weaponrackClickStyle = {
-    backgroundColor: "red",
-    width: "50px",
-    height: "50px",
+  const swordClickStyle = {
+    backgroundColor: "pink",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "5%",
+    height: "20%",
+    right: "21%",
+    top: "53%",
+    cursor: "pointer",
+  };
+
+  const carpetClickStyle = {
+    backgroundColor: "green",
+    opacity: 0.5,
+    position: "absolute",
+    borderRadius: "30px",
+    width: "23%",
+    height: "18%",
+    left: "30%",
+    top: "81%",
+    transform: "rotate(" + "20deg" + ")",
+    cursor: "pointer",
+  };
+
+  const coffinClickStyle = {
+    backgroundColor: "blue",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "24%",
+    height: "22%",
+    right: "34%",
+    bottom: "21%",
+    transform: "rotate(" + "356deg" + ")",
+    cursor: "pointer",
   };
 
   return (
     <>
       <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
+        <div style={armorClickStyle}></div>
+        <div style={faceClickStyle}></div>
+        <div style={swordClickStyle}></div>
+        <div style={carpetClickStyle}></div>
+        <div style={coffinClickStyle}></div>
       </div>
     </>
   );
 };
 
 export default Gamescreen;
-=======
-import React from 'react'
-import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle'
-
-const Gamescreen = () => {
-    const boxStyle = {
-        border: 'line',
-        borderWidth: '15px',
-        width: '75%',
-        height: '33%',
-        display: 'block',
-
-    }
-    
-    return(
-        <div style={boxStyle} >
-        </div>
-    )
-}
-
-export default Gamescreen
->>>>>>> main
