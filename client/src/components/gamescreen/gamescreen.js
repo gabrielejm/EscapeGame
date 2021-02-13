@@ -5,6 +5,10 @@ import { GameContext } from "../../contexts/gameContext";
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
 
+  const handleClick = e => {
+    console.log("clicked!!!");
+  };
+
   const imgStyle = {
     marginLeft: "12.5%",
     position: "absolute",
@@ -94,12 +98,12 @@ const Gamescreen = () => {
   return (
     <>
       <div style={imgStyle} alt="fantasy escape room">
-        <div style={chestClickStyle}></div>
-        <div style={armorClickStyle}></div>
-        <div style={faceClickStyle}></div>
-        <div style={swordClickStyle}></div>
-        <div style={carpetClickStyle}></div>
-        <div style={coffinClickStyle}></div>
+        <div onClick={handleClick} style={chestClickStyle}></div>
+        <div onClick={handleClick} style={armorClickStyle}></div>
+        <div onClick={handleClick} style={faceClickStyle}></div>
+        <div onClick={handleClick} style={swordClickStyle}></div>
+        <div onClick={handleClick} style={carpetClickStyle}></div>
+        <div onClick={handleClick} style={coffinClickStyle}></div>
       </div>
     </>
   );
