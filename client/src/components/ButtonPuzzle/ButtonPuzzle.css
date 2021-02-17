@@ -1,5 +1,16 @@
+.main {
+    right: 30%;
+    top: 35%;
+    background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1861647.jpg");
+    background-position: 49%;
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    padding: 3%;
+}
+
 .button {
-    padding: 2%;
+    padding: 6%;
     border-width: 5px;
     border-radius: 45%;
     margin-left: 25px;
@@ -7,10 +18,10 @@
 }
 
 .submit {
-    margin-left: 14%;
-    margin-top: 2%;
+    margin-left: 40%;
+    margin-top: 10%;
     background-color: gold;
-    width: 10%;
-    height: 30px;
+    width: 25%;
+    height: 35px;
 
 }
