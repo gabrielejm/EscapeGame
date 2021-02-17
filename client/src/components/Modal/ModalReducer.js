@@ -1,13 +1,12 @@
-export const modalReducer = (state, action) => {
- //Deconstructs messages from state
- const {primary, secondary} = state  
+export const modalReducer = (state, action) => {  
  //Used to change messages in Modal
  let message
 
- switch (action) {
-     case 'hello':
+ switch (action.type) {
+     case 'change':
          return{
-             primary
+             ...state,
+            message: action.value
          };
  
      default:

@@ -4,6 +4,7 @@ let modal
 
 const Modal = () => {
     modal = useContext(ModalContext)
+    const message = modal.modalAttributes.message
     console.log(modal)
     //Styling the Pieces of the Component
     const image = 'https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png'
@@ -38,7 +39,7 @@ const Modal = () => {
     return (
         <div style = {modalStyle} id = "modal">
             <button style = {buttonStyle} onClick = {hide}> X </button>
-            <p style = {textStyle} id = "text"></p>
+            <p style = {textStyle} id = "text">{message}</p>
         </div>
     )
 }
