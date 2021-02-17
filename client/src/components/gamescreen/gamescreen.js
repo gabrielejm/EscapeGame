@@ -9,7 +9,32 @@ const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
 
   const handleClick = e => {
-    console.log("clicked!!!");
+    let chest = document.getElementById("chestClick");
+    let armor = document.getElementById("armorClick");
+    let face = document.getElementById("faceClick");
+    let sword = document.getElementById("swordClick");
+    let carpet = document.getElementById("carpetClick");
+    let coffin = document.getElementById("coffinClick");
+
+    switch (e.target) {
+      case chest:
+        console.log("chest clicked!");
+        break;
+      case armor:
+        console.log("armor clicked!");
+        break;
+      case face:
+        console.log("faces clicked!");
+        break;
+      case sword:
+        console.log("sword clicked!");
+        break;
+      case carpet:
+        console.log("carpet clicked!");
+        break;
+      case coffin:
+        console.log("coffin clicked!");
+    }
   };
 
   const imgStyle = {
