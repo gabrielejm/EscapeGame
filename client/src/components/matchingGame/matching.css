@@ -1,0 +1,62 @@
+    body {
+      text-align: center;
+      font-family: -apple-system, sans-serif;
+    }
+
+    div.container {
+      justify-content: center;
+    }
+
+    /* at > 1040 px width, make the container width smaller */
+    @media only screen and (min-width: 1680px) {
+      div#cards, div.cards {
+        width: 51%;
+      }
+    }
+       @media only screen and (min-width: 1500px) and ( max-width: 1679px) {
+      div#cards, div.cards {
+        width: 60%;
+      }
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    #cards {
+      width: 71%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .card {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+    .card:not(:nth-child(6n)) {
+      margin-right: 20px;
+    }
+
+    .c {
+      position: absolute;
+      max-width: 160px;
+      max-height: 160px;
+      width: 50ch;
+      height: 50ch;
+      cursor: pointer;
+      will-change: transform, opacity;
+    }
+
+    .front,
+    .back {
+      background-size: cover;
+    }
+
+    .back {
+      background-image: url(./images/backOfFrame.png);
+    }
