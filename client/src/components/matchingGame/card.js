@@ -24,7 +24,7 @@ const Card = ({ id, face, game, flippedCount, setFlippedCount, flippedIndexes, s
   }, [flippedIndexes]);
 
   const onCardClick = () => {
-    if (!game[id].flipped && flippedCount % 3 === 0) {
+    if (game[id].flipped === false && flippedCount % 3 === 0) {
       set((state) => !state);
       setFlippedCount(flippedCount + 1);
       const newIndexes = [...flippedIndexes];
@@ -42,18 +42,18 @@ const Card = ({ id, face, game, flippedCount, setFlippedCount, flippedIndexes, s
   return (
     <div onClick={onCardClick}>
       <flip.div
-        className="c front"
+        className="c back"
         style={{
           opacity: opacity.interpolate((o) => 1 - o),
           transform,
-          backgroundImage: `url(${face})`,
         }}
       />
       <flip.div
-        className="c back"
+        className="c front"
         style={{
           opacity,
           transform: transform.interpolate((t) => `${t} rotateY(180deg)`),
+          backgroundImage: `url(${face})`,
         }}
       />
     </div>
