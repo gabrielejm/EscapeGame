@@ -11,6 +11,7 @@ const MatchingGame = () => {
   const [game, setGame] = useState([]);
   const [flippedCount, setFlippedCount] = useState(0);
   const [flippedIndexes, setFlippedIndexes] = useState([]);
+  let gameFinished;
 
   const faces = [
     faceOne,
@@ -56,7 +57,7 @@ const MatchingGame = () => {
      newSet[flippedIndexes[0]].flipped = true;
      newSet[flippedIndexes[1]].flipped = true;
      setGame(newSet);
-
+      console.log(newSet)
      const newIndexes = [...flippedIndexes];
      newIndexes.push(false);
      setFlippedIndexes(newIndexes);
@@ -65,10 +66,13 @@ const MatchingGame = () => {
      newIndexes.push(true);
      setFlippedIndexes(newIndexes);
    }
- }
-
-  if (game.length === 0) return <div>loading...</div>;
+  }
+  if (game.length === 0) return <div>error loading game</div>;
+  
   else {
+    if (game.some((card) => card.flipped === false) != true) {
+    console.log("you finished the matching game!")
+  }
     return (
       <div id="cards">
         {game.map((card, index) => (
