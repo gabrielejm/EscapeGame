@@ -1,7 +1,9 @@
-<<<<<<< HEAD
 import React, { useState, useContext } from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContext } from "../../contexts/gameContext";
+import Modal from "../Modal/Modal"
+import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import { ModalContextProvider } from "../Modal/ModalContext";
 
 const Gamescreen = () => {
   // const [status, setStatus] = useContext(GameContext);
@@ -59,35 +61,24 @@ const Gamescreen = () => {
     height: "50px",
   };
 
+  const puzzleStyling = {
+    right: "29%",
+    top: "34%",
+    backgroundColor: "chartreuse",
+    width: "50%",
+    height: "25%",
+    position: "absolute"
+  }
+
   return (
-    <>
+    <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
+        <ButtonPuzzle />
+        <Modal />
       </div>
-    </>
+    </ModalContextProvider>
   );
 };
 
 export default Gamescreen;
-=======
-import React from 'react'
-import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle'
-
-const Gamescreen = () => {
-    const boxStyle = {
-        border: 'line',
-        borderWidth: '15px',
-        width: '75%',
-        height: '33%',
-        display: 'block',
-
-    }
-    
-    return(
-        <div style={boxStyle} >
-        </div>
-    )
-}
-
-export default Gamescreen
->>>>>>> main
