@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import gameImage from "../../images/escapeRoomBackground.png";
-import { GameContext } from "../../contexts/gameContext";
+import { GameContextProvider } from "../../contexts/gameContext";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import { ModalContextProvider } from "../Modal/ModalContext";
@@ -62,6 +62,7 @@ const Gamescreen = () => {
   };
 
   return (
+    <GameContextProvider>
     <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">
         <div style={chestClickStyle}></div>
@@ -69,6 +70,7 @@ const Gamescreen = () => {
         <Modal />
       </div>
     </ModalContextProvider>
+    </GameContextProvider>
   );
 };
 

@@ -3,7 +3,7 @@ import {modalReducer} from './ModalReducer';
 // Exports Context
 export const ModalContext = createContext();
 
-//Emports Component
+//Exports Component
 export const ModalContextProvider = props => {
     const message = {
         message: "Hi, this is a test"

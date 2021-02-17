@@ -1,28 +1,20 @@
-import React, { useState, createContext } from "react";
+import React, { useReducer, createContext } from "react";
+import {gameReducer} from "./gameReducer"
 
 export const GameContext = createContext();
 
 export const GameContextProvider = props => {
-  const [status, setStatus] = useState([
-    {
-      name: "Puzzle One",
-      isSolved: false,
-    },
-    {
-      name: "Puzzle Two",
-      isSolved: false,
-    },
-    {
-      name: "Puzzle Three",
-      isSolved: false,
-    },
-    {
-      name: "Puzzle Four",
-      isSolved: false,
-    },
-  ]);
+  const completedPuzzles = {
+    puzzleOne : false,
+    puzzleTwo : false,
+    puzzleThree: false,
+    puzzleFour: false
+  }
+
+  const [completedAttributes, dispatch] = useReducer(gameReducer, completedPuzzles)
+
   return (
-    <GameContext.Provider value={[status, setStatus]}>
+    <GameContext.Provider value={{completedAttributes, dispatch}}>
       {props.children}
     </GameContext.Provider>
   );
