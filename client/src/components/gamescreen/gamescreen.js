@@ -1,13 +1,18 @@
 import React, { useState, useContext } from "react";
-import { GameContextProvider } from "../../contexts/gameContext";
-import { ModalContextProvider, GameContext } from "../Modal/ModalContext";
+import { GameContextProvider, GameContext } from "../../contexts/gameContext";
+import { ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
-import Modal from "../Modal/Modal"
+import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 
 const Gamescreen = () => {
-  const game = useContext(GameContext)
-  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  const game = useContext(GameContext);
+  // const {
+  //   puzzleOne,
+  //   puzzleTwo,
+  //   puzzleThree,
+  //   puzzleFour,
+  // } = game.completedAttributes;
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -126,36 +131,40 @@ const Gamescreen = () => {
 
   return (
     <GameContextProvider>
-    <ModalContextProvider>
-      <div style={imgStyle} alt="fantasy escape room">
-        <div
-          id="chestClick"
-          onClick={handleClick}
-          style={chestClickStyle}
-        ></div>
-        <div
-          id="armorClick"
-          onClick={handleClick}
-          style={armorClickStyle}
-        ></div>
-        <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
-        <div
-          id="swordClick"
-          onClick={handleClick}
-          style={swordClickStyle}
-        ></div>
-        <div
-          id="carpetClick"
-          onClick={handleClick}
-          style={carpetClickStyle}
-        ></div>
-        <div
-          id="coffinClick"
-          onClick={handleClick}
-          style={coffinClickStyle}
-        ></div>
-      </div>
-    </ModalContextProvider>
+      <ModalContextProvider>
+        <div style={imgStyle} alt="fantasy escape room">
+          <div
+            id="chestClick"
+            onClick={handleClick}
+            style={chestClickStyle}
+          ></div>
+          <div
+            id="armorClick"
+            onClick={handleClick}
+            style={armorClickStyle}
+          ></div>
+          <div
+            id="faceClick"
+            onClick={handleClick}
+            style={faceClickStyle}
+          ></div>
+          <div
+            id="swordClick"
+            onClick={handleClick}
+            style={swordClickStyle}
+          ></div>
+          <div
+            id="carpetClick"
+            onClick={handleClick}
+            style={carpetClickStyle}
+          ></div>
+          <div
+            id="coffinClick"
+            onClick={handleClick}
+            style={coffinClickStyle}
+          ></div>
+        </div>
+      </ModalContextProvider>
     </GameContextProvider>
   );
 };
