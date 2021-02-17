@@ -1,14 +1,24 @@
 require('dotenv').config();
 
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
+const mongoose = require('mongoose')
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const dbConnection = require('./config/connection');
-const passport = require('./config/passport');
+// const passport = require('./config/passport');
 const path = require('path');
+const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+//mongoose connect
+mongoose.connect("mongodb://127.0.0.1:27017/details", {
+  useNewUrlParser: true
+});
+
+const connection = mongoose.connection;
+
 
 // Middlewares
 app.use(morgan('dev'));
@@ -16,15 +26,15 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('/', express.static(path.join(__dirname, '../client/build')));
 
-// Passport
-app.use(passport.initialize());
-app.use(passport.session()); // will call the deserializeUser
-app.use(session({
-  secret: process.env.AUTH_SECRET,
-  store: new MongoStore({ mongooseConnection: dbConnection }),
-  resave: false,
-  saveUninitialized: false
-}));
+// // Passport
+// app.use(passport.initialize());
+// app.use(passport.session()); // will call the deserializeUser
+// app.use(session({
+//   secret: process.env.AUTH_SECRET,
+//   store: new MongoStore({ mongooseConnection: dbConnection }),
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/'))
