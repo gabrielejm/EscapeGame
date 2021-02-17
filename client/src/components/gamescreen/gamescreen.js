@@ -98,15 +98,6 @@ const Gamescreen = () => {
     cursor: "pointer",
   };
 
-  const puzzleStyling = {
-    right: "29%",
-    top: "34%",
-    backgroundColor: "chartreuse",
-    width: "50%",
-    height: "25%",
-    position: "absolute",
-  };
-
   return (
     <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">

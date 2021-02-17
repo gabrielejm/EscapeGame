@@ -19,11 +19,11 @@ const Submit = () => {
                //Unhides the Modal and hides the Button Puzzle
               document.getElementById('modal').style.visibility = "visible"
               document.getElementById('buttonPuzzle').style.visibility = "hidden"
-              modal.dispatch({type: "hello", value: "You did it!"})
+              modal.dispatch({type: "change", value: "You did it!"})
            } else {
                 document.getElementById('modal').style.visibility = "visible"
                 document.getElementById('buttonPuzzle').style.visibility = "hidden"
-                modal.dispatch({type: "hello", value: "You failed"})
+                modal.dispatch({type: "change", value: "You failed"})
            }
     })
     return (
