@@ -3,7 +3,9 @@ import {ModalContext} from './ModalContext'
 let modal 
 
 const Modal = () => {
+    //Calls Modal Context
     modal = useContext(ModalContext)
+    //allows us to insert the new messages into the modal
     const message = modal.modalAttributes.message
     //Styling the Pieces of the Component
     const image = 'https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png'

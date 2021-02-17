@@ -1,12 +1,14 @@
 import React, { useState, useContext } from "react";
-import gameImage from "../../images/escapeRoomBackground.png";
 import { GameContextProvider } from "../../contexts/gameContext";
+import { ModalContextProvider, GameContext } from "../Modal/ModalContext";
+import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import { ModalContextProvider } from "../Modal/ModalContext";
 
 const Gamescreen = () => {
-  // const [status, setStatus] = useContext(GameContext);
+  const game = useContext(GameContext)
+  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  
   const boxStyle = {
     overflow: "hidden",
     width: "75%",

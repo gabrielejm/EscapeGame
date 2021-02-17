@@ -4,6 +4,7 @@ import {ModalContext} from '../Modal/ModalContext'
 import {GameContext} from '../../contexts/gameContext'
 
 const Submit = () => {
+    //Calls Game context
     const game = useContext(GameContext)
     //Calls Modal context
     const modal = useContext(ModalContext)
