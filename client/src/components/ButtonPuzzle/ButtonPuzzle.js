@@ -4,7 +4,7 @@ import Submit from "./submit";
 import PuzzleContextProvider from './PuzzleContext'
 import "./ButtonPuzzle.css"
 
-const ButtonPuzzle = ({style}) => {
+const ButtonPuzzle = () => {
 
     return (
     <PuzzleContextProvider>
