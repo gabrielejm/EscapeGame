@@ -5,11 +5,10 @@ import { GameContext } from "./contexts/gameContext";
 
 const App = () => {
   return (
-    // <GameContext>
-    //   <Main />
-    // </GameContext>
-    <Main />
-  );
-};
+    <div>
+      <Main />
+    </div>
+    );
+}
 
 export default App;
