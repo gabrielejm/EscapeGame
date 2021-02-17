@@ -4,6 +4,7 @@ import { ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import RiddlePuzzle from "../RiddlePuzzle"
 
 const Gamescreen = () => {
   const game = useContext(GameContext)
@@ -157,6 +158,7 @@ const Gamescreen = () => {
           style={coffinClickStyle}
         ></div>
       </div>
+        <RiddlePuzzle />
         <ButtonPuzzle />
         <Modal />
     </ModalContextProvider>
