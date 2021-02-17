@@ -23,7 +23,6 @@ const Main = () => {
         <h1>Matching Game</h1>
       </div>
       <MatchingGame />
-
     </div>
   )
 

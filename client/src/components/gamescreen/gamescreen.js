@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
-import { GameContextProvider } from "../../contexts/gameContext";
-import { ModalContextProvider, GameContext } from "../Modal/ModalContext";
+import { GameContextProvider, GameContext } from "../../contexts/gameContext";
+import { ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 
 const Gamescreen = () => {
   const game = useContext(GameContext)
-  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  // const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -20,12 +20,14 @@ const Gamescreen = () => {
     switch (e.target) {
       case chest:
         console.log("chest clicked!");
+        document.getElementById('buttonPuzzle').style.visibility = "visible"
         break;
       case armor:
         console.log("armor clicked!");
         break;
       case face:
         console.log("faces clicked!");
+        document.getElementById('cards').style.visibility = "visible"
         break;
       case sword:
         console.log("sword clicked!");
@@ -155,6 +157,8 @@ const Gamescreen = () => {
           style={coffinClickStyle}
         ></div>
       </div>
+        <ButtonPuzzle />
+        <Modal />
     </ModalContextProvider>
     </GameContextProvider>
   );

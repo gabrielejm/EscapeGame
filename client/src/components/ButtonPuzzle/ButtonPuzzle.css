@@ -7,6 +7,7 @@
     height: 30%;
     position: absolute;
     padding: 3%;
+    visibility: hidden;
 }
 
 .button {
@@ -18,7 +19,7 @@
 }
 
 .submit {
-    margin-left: 40%;
+    margin-left: 5%;
     margin-top: 10%;
     background-color: gold;
     width: 25%;
