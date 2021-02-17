@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
 import {PuzzleContext} from './PuzzleContext'
 import {ModalContext} from '../Modal/ModalContext'
+import {GameContext} from '../../contexts/gameContext'
 
 const Submit = () => {
+    //Calls Game context
+    const game = useContext(GameContext)
+    //Calls Modal context
     const modal = useContext(ModalContext)
     //Calls Puzzle Context
     const puzzle = useContext(PuzzleContext)
@@ -20,6 +24,7 @@ const Submit = () => {
               document.getElementById('modal').style.visibility = "visible"
               document.getElementById('buttonPuzzle').style.visibility = "hidden"
               modal.dispatch({type: "change", value: "You did it!"})
+              game.dispatch('puzzleOne')
            } else {
                 document.getElementById('modal').style.visibility = "visible"
                 document.getElementById('buttonPuzzle').style.visibility = "hidden"

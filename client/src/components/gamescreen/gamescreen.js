@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
+import { GameContextProvider } from "../../contexts/gameContext";
+import { ModalContextProvider, GameContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
-import { GameContext } from "../../contexts/gameContext";
-import Modal from "../Modal/Modal";
+import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import { ModalContextProvider } from "../Modal/ModalContext";
 
 const Gamescreen = () => {
-  // const [status, setStatus] = useContext(GameContext);
+  const game = useContext(GameContext)
+  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -124,6 +125,7 @@ const Gamescreen = () => {
   };
 
   return (
+    <GameContextProvider>
     <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">
         <div
@@ -154,6 +156,7 @@ const Gamescreen = () => {
         ></div>
       </div>
     </ModalContextProvider>
+    </GameContextProvider>
   );
 };
 
