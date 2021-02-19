@@ -4,15 +4,12 @@ import { ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import MatchingGame from "../matchingGame/matching";
+import RiddlePuzzle from "../RiddlePuzzle";
 
 const Gamescreen = () => {
   const game = useContext(GameContext);
-  // const {
-  //   puzzleOne,
-  //   puzzleTwo,
-  //   puzzleThree,
-  //   puzzleFour,
-  // } = game.completedAttributes;
+  // const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -25,12 +22,14 @@ const Gamescreen = () => {
     switch (e.target) {
       case chest:
         console.log("chest clicked!");
+        document.getElementById("buttonPuzzle").style.visibility = "visible";
         break;
       case armor:
         console.log("armor clicked!");
         break;
       case face:
         console.log("faces clicked!");
+        document.getElementById("cards").style.visibility = "visible";
         break;
       case sword:
         console.log("sword clicked!");
@@ -130,42 +129,40 @@ const Gamescreen = () => {
   };
 
   return (
-    <GameContextProvider>
-      <ModalContextProvider>
-        <div style={imgStyle} alt="fantasy escape room">
-          <div
-            id="chestClick"
-            onClick={handleClick}
-            style={chestClickStyle}
-          ></div>
-          <div
-            id="armorClick"
-            onClick={handleClick}
-            style={armorClickStyle}
-          ></div>
-          <div
-            id="faceClick"
-            onClick={handleClick}
-            style={faceClickStyle}
-          ></div>
-          <div
-            id="swordClick"
-            onClick={handleClick}
-            style={swordClickStyle}
-          ></div>
-          <div
-            id="carpetClick"
-            onClick={handleClick}
-            style={carpetClickStyle}
-          ></div>
-          <div
-            id="coffinClick"
-            onClick={handleClick}
-            style={coffinClickStyle}
-          ></div>
-        </div>
-      </ModalContextProvider>
-    </GameContextProvider>
+    <ModalContextProvider>
+      <div style={imgStyle} alt="fantasy escape room">
+        <div
+          id="chestClick"
+          onClick={handleClick}
+          style={chestClickStyle}
+        ></div>
+        <div
+          id="armorClick"
+          onClick={handleClick}
+          style={armorClickStyle}
+        ></div>
+        <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
+        <div
+          id="swordClick"
+          onClick={handleClick}
+          style={swordClickStyle}
+        ></div>
+        <div
+          id="carpetClick"
+          onClick={handleClick}
+          style={carpetClickStyle}
+        ></div>
+        <div
+          id="coffinClick"
+          onClick={handleClick}
+          style={coffinClickStyle}
+        ></div>
+      </div>
+      <RiddlePuzzle />
+      <ButtonPuzzle />
+      <MatchingGame />
+      <Modal />
+    </ModalContextProvider>
   );
 };
 
