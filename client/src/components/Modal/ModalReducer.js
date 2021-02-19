@@ -1,5 +1,4 @@
 export const modalReducer = (state, action) => {  
- //Used to change messages in Modal
 
  switch (action.type) {
      case 'change':

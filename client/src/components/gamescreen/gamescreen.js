@@ -1,15 +1,53 @@
 import React, { useState, useContext } from "react";
+import { GameContextProvider, GameContext } from "../../contexts/gameContext";
+import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
-import { GameContext } from "../../contexts/gameContext";
-import Modal from "../Modal/Modal";
+import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import { ModalContextProvider } from "../Modal/ModalContext";
+import MatchingGame from "../matchingGame/matching";
+import RiddlePuzzle from "../RiddlePuzzle"
+import { modalReducer } from "../Modal/ModalReducer";
 
 const Gamescreen = () => {
-  // const [status, setStatus] = useContext(GameContext);
+  const game = useContext(GameContext)
+  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+
+  const modal = useContext(ModalContext)
 
   const handleClick = e => {
-    console.log("clicked!!!");
+    let chest = document.getElementById("chestClick");
+    let armor = document.getElementById("armorClick");
+    let face = document.getElementById("faceClick");
+    let sword = document.getElementById("swordClick");
+    let carpet = document.getElementById("carpetClick");
+    let coffin = document.getElementById("coffinClick");
+
+    switch (e.target) {
+      case chest:
+        console.log("chest clicked!");
+        if (puzzleOne){
+          document.getElementById('buttonPuzzle').style.visibility = "visible"
+        } else{
+          document.getElementById('modal').style.visibility = "visible"
+          modal.dispatch({type: "change", value: "You can't do that right now"})
+        }
+        break;
+      case armor:
+        console.log("armor clicked!");
+        break;
+      case face:
+        console.log("faces clicked!");
+        document.getElementById('cards').style.visibility = "visible"
+        break;
+      case sword:
+        console.log("sword clicked!");
+        break;
+      case carpet:
+        console.log("carpet clicked!");
+        break;
+      case coffin:
+        console.log("coffin clicked!");
+    }
   };
 
   const imgStyle = {
@@ -99,7 +137,7 @@ const Gamescreen = () => {
   };
 
   return (
-    <ModalContextProvider>
+    <>
       <div style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
@@ -128,7 +166,11 @@ const Gamescreen = () => {
           style={coffinClickStyle}
         ></div>
       </div>
-    </ModalContextProvider>
+        <RiddlePuzzle />
+        <ButtonPuzzle />
+        <MatchingGame />
+        <Modal />
+    </>
   );
 };
 

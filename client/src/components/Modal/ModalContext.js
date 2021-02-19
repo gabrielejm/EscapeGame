@@ -3,7 +3,7 @@ import {modalReducer} from './ModalReducer';
 // Exports Context
 export const ModalContext = createContext();
 
-//Emports Component
+//Exports Component
 export const ModalContextProvider = props => {
     const message = {
         message: "Hi, this is a test"
@@ -14,3 +14,5 @@ export const ModalContextProvider = props => {
     // Passes props down to children to be called later
     return <ModalContext.Provider value = {{modalAttributes, dispatch}}>{props.children}</ModalContext.Provider>
 }
+
+export default ModalContextProvider

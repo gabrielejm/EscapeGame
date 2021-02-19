@@ -3,15 +3,18 @@ import {ModalContext} from './ModalContext'
 let modal 
 
 const Modal = () => {
+    //Calls Modal Context
     modal = useContext(ModalContext)
+    //allows us to insert the new messages into the modal
     const message = modal.modalAttributes.message
-    console.log(modal)
     //Styling the Pieces of the Component
     const image = 'https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png'
     const buttonStyle = {
         color: "red",
         backgroundColor: "#d4c79d",
-        marginLeft: "3%",
+        left: "15px",
+        top: "5px",
+        position: "absolute",
         borderColor: "#d4c79d",
 
     }
