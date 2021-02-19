@@ -15,6 +15,8 @@ const Gamescreen = () => {
     puzzleTwo,
     puzzleThree,
     puzzleFour,
+    swordGrabbed,
+    swordPlaced,
   } = game.completedAttributes;
 
   const modal = useContext(ModalContext);
@@ -33,6 +35,12 @@ const Gamescreen = () => {
         console.log("chest clicked!");
         if (puzzleOne) {
           document.getElementById("buttonPuzzle").style.visibility = "visible";
+        } else if (puzzleTwo) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
         } else {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -43,6 +51,25 @@ const Gamescreen = () => {
         break;
       case armor:
         console.log("armor clicked!");
+        if (swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You placed the sword!",
+          });
+        } else if (!swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You're missing an item...",
+          });
+        } else if (swordPlaced) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already placed the sword!",
+          });
+        }
         break;
       case face:
         console.log("faces clicked!");
@@ -50,15 +77,57 @@ const Gamescreen = () => {
         break;
       case sword:
         console.log("sword clicked!");
+        if (!swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You picked up a sword!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already have the sword!",
+          });
+        }
         break;
       case carpet:
         console.log("carpet clicked!");
+        if (puzzleTwo) {
+          document.getElementById("mazePuzzle").style.visibility = "visible";
+        } else if (puzzleThree) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You can't do that right now",
+          });
+        }
         break;
       case coffin:
         console.log("coffin clicked!");
+        if (puzzleThree) {
+          document.getElementById("riddle").style.visibility = "visible";
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You can't do that right now",
+          });
+        }
         break;
       case scroll:
         console.log("scroll clicked");
+        document.getElementById("modal").style.visibility = "visible";
+        modal.dispatch({
+          type: "change",
+          value: "You discovered a clue!",
+        });
     }
   };
 
