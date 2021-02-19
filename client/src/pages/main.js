@@ -6,10 +6,6 @@ import ModalContextProvider from "../components/Modal/ModalContext"
 import SignIn from "../components/signin/signin"
 const Main = () => {
 
-  useEffect(() => {
-    // Load in a high score or something here?
-  }, [])
-
   return (
     <div>
       <div class="sidebar">
