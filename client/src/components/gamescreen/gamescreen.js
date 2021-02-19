@@ -1,15 +1,18 @@
 import React, { useState, useContext } from "react";
 import { GameContextProvider, GameContext } from "../../contexts/gameContext";
-import { ModalContextProvider } from "../Modal/ModalContext";
+import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/matching";
 import RiddlePuzzle from "../RiddlePuzzle"
+import { modalReducer } from "../Modal/ModalReducer";
 
 const Gamescreen = () => {
   const game = useContext(GameContext)
-  // const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+
+  const modal = useContext(ModalContext)
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -22,7 +25,12 @@ const Gamescreen = () => {
     switch (e.target) {
       case chest:
         console.log("chest clicked!");
-        document.getElementById('buttonPuzzle').style.visibility = "visible"
+        if (puzzleOne){
+          document.getElementById('buttonPuzzle').style.visibility = "visible"
+        } else{
+          document.getElementById('modal').style.visibility = "visible"
+          modal.dispatch({type: "change", value: "You can't do that right now"})
+        }
         break;
       case armor:
         console.log("armor clicked!");
@@ -129,9 +137,7 @@ const Gamescreen = () => {
   };
 
   return (
-    <GameContextProvider>
-      <ModalContextProvider>
-      <MatchingGame/>
+    <>
       <div style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
@@ -162,9 +168,9 @@ const Gamescreen = () => {
       </div>
         <RiddlePuzzle />
         <ButtonPuzzle />
+        <MatchingGame />
         <Modal />
-    </ModalContextProvider>
-    </GameContextProvider>
+    </>
   );
 };
 

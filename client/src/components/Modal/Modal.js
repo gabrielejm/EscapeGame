@@ -12,7 +12,9 @@ const Modal = () => {
     const buttonStyle = {
         color: "red",
         backgroundColor: "#d4c79d",
-        // marginLeft: "3%",
+        left: "15px",
+        top: "5px",
+        position: "absolute",
         borderColor: "#d4c79d",
 
     }
