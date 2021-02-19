@@ -1,18 +1,21 @@
 export const riddleReducer = (state, action) => {
+    // Destructures values from state
     const {letterOne, letterTwo, letterThree, letterFour, letterFive } = state
+    // Defines the letters used in the answer
     const letters = ['a', 'b', 'c', 'd', 'e']
     let letter
 
+    //Toggles the Letter shown 
     switch (action) {
         case 'letterOne':
-            console.log('button clicked')
+            // Checks current letter and switches it to next in letters array
             letters.map((lett,i) => {
                if( lett === letterOne) {
+                   //if at the end of the array, switches to the front
                    if (lett === 'e'){
-                        letter = 'a'
+                        letter = letters[0]
                    } else {
                        letter = letters[i+1]
-                       console.log(letter)
                    }
                 }  
             })
@@ -22,14 +25,14 @@ export const riddleReducer = (state, action) => {
             };
         
         case 'letterTwo':
-            console.log('button clicked')
+            // Checks current letter and switches it to next in letters array
             letters.map((lett,i) => {
                if( lett === letterTwo) {
+                   //if at the end of the array, switches to the front
                    if (lett === 'e'){
-                        letter = 'a'
+                        letter = letters[0]
                    } else {
                        letter = letters[i+1]
-                       console.log(letter)
                    }
                 }  
             })
@@ -39,14 +42,14 @@ export const riddleReducer = (state, action) => {
             };
 
         case 'letterThree':
-            console.log('button clicked')
+            // Checks current letter and switches it to next in letters array
             letters.map((lett,i) => {
                if( lett === letterThree) {
+                   //if at the end of the array, switches to the front
                    if (lett === 'e'){
-                        letter = 'a'
+                        letter = letters[0]
                    } else {
                        letter = letters[i+1]
-                       console.log(letter)
                    }
                 }  
             })
@@ -55,14 +58,14 @@ export const riddleReducer = (state, action) => {
                 letterThree: letter
             };
         case 'letterFour':
-            console.log('button clicked')
+            // Checks current letter and switches it to next in letters array
             letters.map((lett,i) => {
                if( lett === letterFour) {
+                   //if at the end of the array, switches to the front
                    if (lett === 'e'){
-                        letter = 'a'
+                        letter = letters[0]
                    } else {
                        letter = letters[i+1]
-                       console.log(letter)
                    }
                 }  
             })
@@ -72,14 +75,14 @@ export const riddleReducer = (state, action) => {
             };    
         
         case 'letterFive':
-            console.log('button clicked')
+            // Checks current letter and switches it to next in letters array
             letters.map((lett,i) => {
                if( lett === letterFive) {
+                   //if at the end of the array, switches to the front
                    if (lett === 'e'){
-                        letter = 'a'
+                        letter = letters[0]
                    } else {
                        letter = letters[i+1]
-                       console.log(letter)
                    }
                 }  
             })
