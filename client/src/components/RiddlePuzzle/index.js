@@ -1,7 +1,6 @@
 import React from 'react';
 import Submit from './Submit';
 import Box from './Box';
-import Clear from './Clear';
 import "./riddle.css";
 
 const RiddlePuzzle = () => {
