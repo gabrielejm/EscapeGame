@@ -1,5 +1,4 @@
 import React, { useReducer, createContext } from "react";
-import { puzzleReducer } from "../ButtonPuzzle/PuzzleReducer";
 import {riddleReducer} from './RiddleReducer';
 //Exports Context
 export const RiddleContext = createContext();
@@ -20,6 +19,8 @@ export const RiddleContextProvider = props => {
     }
 
     const [riddleAttributes, dispatch] = useReducer(riddleReducer, boxes)
+    return <RiddleContext.Provider value = {{riddleAttributes, dispatch}}>{props.children}</RiddleContext.Provider>;
+
 }
 
 export default RiddleContextProvider
