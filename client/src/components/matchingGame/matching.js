@@ -13,7 +13,6 @@ const MatchingGame = () => {
   const [flippedCount, setFlippedCount] = useState(0);
   const [flippedIndexes, setFlippedIndexes] = useState([]);
   const modal = useContext(ModalContext)
-  let gameFinished;
 
   const faces = [
     faceOne,
