@@ -4,6 +4,7 @@ import { ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal"
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import MatchingGame from "../matchingGame/matching";
 import RiddlePuzzle from "../RiddlePuzzle"
 
 const Gamescreen = () => {
@@ -129,7 +130,8 @@ const Gamescreen = () => {
 
   return (
     <GameContextProvider>
-    <ModalContextProvider>
+      <ModalContextProvider>
+      <MatchingGame/>
       <div style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
