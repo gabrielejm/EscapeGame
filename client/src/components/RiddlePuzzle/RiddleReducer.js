@@ -35,7 +35,7 @@ export const riddleReducer = (state, action) => {
             })
             return{
                 ...state,
-                letterOne: letter
+                letterTwo: letter
             };
 
         case 'letterThree':
@@ -52,7 +52,7 @@ export const riddleReducer = (state, action) => {
             })
             return{
                 ...state,
-                letterOne: letter
+                letterThree: letter
             };
         case 'letterFour':
             console.log('button clicked')
@@ -68,7 +68,7 @@ export const riddleReducer = (state, action) => {
             })
             return{
                 ...state,
-                letterOne: letter
+                letterFour: letter
             };    
         
         case 'letterFive':
@@ -85,7 +85,7 @@ export const riddleReducer = (state, action) => {
             })
             return{
                 ...state,
-                letterOne: letter
+                letterFive: letter
             };
         default:
             return state;

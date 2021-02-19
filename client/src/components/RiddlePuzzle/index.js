@@ -10,10 +10,10 @@ const RiddlePuzzle = () => {
             <RiddleContextProvider>
             <div className = "row">
                 <Box box = "letterOne"/>
-                <Box />
-                <Box />
-                <Box />
-                <Box />
+                <Box box = "letterTwo"/>
+                <Box box = "letterThree"/>
+                <Box box = "letterFour"/>
+                <Box box = "letterFive"/>
             </div>
             <Submit />
             </RiddleContextProvider>
