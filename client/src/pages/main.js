@@ -15,9 +15,6 @@ const Main = () => {
         <p>Play below!</p>
         <Gamescreen />
       </div>
-      <div className="container">
-        <h1>Matching Game</h1>
-      </div>
     </div>
   )
 

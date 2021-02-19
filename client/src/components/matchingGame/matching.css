@@ -31,6 +31,7 @@
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
+      visibility: hidden;
     }
     .card {
       width: 160px;
