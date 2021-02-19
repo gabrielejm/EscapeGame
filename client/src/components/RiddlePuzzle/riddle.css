@@ -1,31 +1,32 @@
 #riddle {
-    right: 25%;
-    top: 30%;
-    background-color: gray;
-    /* background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1861647.jpg");
+  right: 25%;
+  top: 30%;
+  background-color: gray;
+  /* background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1861647.jpg");
     background-position: 49%; */
-    width: 40%;
-    height: 30%;
-    position: absolute;
-    padding: 3%;
+  width: 40%;
+  height: 30%;
+  position: absolute;
+  padding: 3%;
+  visibility: hidden;
 }
 
-.box { 
-    height: 70%;
-    width: 15%;
-    background-color: honeydew;
-    border-width: 4px;
-    border-color: black;
-    display: inline-block;
+.box {
+  height: 70%;
+  width: 15%;
+  background-color: honeydew;
+  border-width: 4px;
+  border-color: black;
+  display: inline-block;
 }
 
 .row {
-    height: 80%;
+  height: 80%;
 }
 
 .funcButton {
-    display: inline-block;
-    height: 10%;
-    width: 20%;
-    background-color: lightslategray;
+  display: inline-block;
+  height: 10%;
+  width: 20%;
+  background-color: lightslategray;
 }
