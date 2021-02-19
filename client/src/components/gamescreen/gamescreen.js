@@ -88,7 +88,7 @@ const Gamescreen = () => {
               type: "change",
               value: "You picked up a sword!",
             });
-            modal.dispatch('swordGrabbed')
+            game.dispatch('swordGrabbed')
           } else {
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
@@ -106,7 +106,8 @@ const Gamescreen = () => {
         break;
       case carpet:
         if (puzzleTwo) {
-          document.getElementById("mazePuzzle").style.visibility = "visible";
+          document.getElementById("modal").style.visibility = "visible";
+          game.dispatch("puzzleThree")
         } else if (puzzleThree) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
