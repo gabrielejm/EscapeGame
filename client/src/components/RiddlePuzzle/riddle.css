@@ -8,6 +8,7 @@
     height: 30%;
     position: absolute;
     padding: 3%;
+    visibility: hidden;
 }
 
 .box { 
