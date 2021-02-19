@@ -4,11 +4,19 @@
   background-color: gray;
   /* background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1861647.jpg");
     background-position: 49%; */
+<<<<<<< HEAD
   width: 40%;
   height: 30%;
   position: absolute;
   padding: 3%;
   visibility: hidden;
+=======
+    width: 40%;
+    height: 30%;
+    position: absolute;
+    padding: 3%;
+    visibility: hidden;
+>>>>>>> main
 }
 
 .box {
