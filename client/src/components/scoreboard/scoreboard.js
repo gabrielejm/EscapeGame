@@ -2,23 +2,6 @@
 import React from 'react'
 import './pages/scoreboard.css'
 
-// export default function ScoreBoard(props) {
-//     return (
-//         <div className='score-board'>
-//             <div>Score:{ props.score }</div>
-//         </div>
-
-// const scoreBoard = () => {
-
-//     return (
-//         <ViewScores>
-//             <div className = "main" id = "scoreBoard">
-
-                
-//             </div>
-//         </ViewScores>
-//     
-
 export class ScoreBoard extends Component {
     return () {
         <div>
@@ -34,7 +17,6 @@ export class ScoreBoard extends Component {
                         </tbody>
                     </table>
                 </div>
-
 
             </div>
      </div>
