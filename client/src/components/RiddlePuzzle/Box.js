@@ -11,7 +11,7 @@ const Box = ({box}) => {
     
 
     return (
-        <button className = "box" onClick = {change}>{letter}</button>
+        <button className = "box" onClick = {change}><strong>{letter}</strong></button>
     )
 }
 
