@@ -47,6 +47,8 @@ const Gamescreen = () => {
         break;
       case coffin:
         console.log("coffin clicked!");
+        document.getElementById('riddle').style.visibility = "visible"
+
     }
   };
 
