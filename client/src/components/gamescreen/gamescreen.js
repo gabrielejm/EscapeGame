@@ -6,7 +6,6 @@ import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/matching";
 import RiddlePuzzle from "../RiddlePuzzle";
-import { modalReducer } from "../Modal/ModalReducer";
 
 const Gamescreen = () => {
   const game = useContext(GameContext);
@@ -33,7 +32,6 @@ const Gamescreen = () => {
 
     switch (e.target) {
       case chest:
-        console.log("chest clicked!");
         if (puzzleOne) {
           document.getElementById("buttonPuzzle").style.visibility = "visible";
         } else if (puzzleTwo) {
@@ -46,12 +44,11 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You can't do that right now",
+            value: "The chest won't open.",
           });
         }
         break;
       case armor:
-        console.log("armor clicked!");
         if (swordGrabbed) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -78,30 +75,36 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You have already solved this puzzle!",
+            value: "As you examine the faces you see in the bottom right corner of one of them have 'GRRGG' written on it"
           });
         } else {
           document.getElementById("cards").style.visibility = "visible";
         }
         break;
       case sword:
-        console.log("sword clicked!");
-        if (!swordGrabbed) {
-          document.getElementById("modal").style.visibility = "visible";
-          modal.dispatch({
-            type: "change",
-            value: "You picked up a sword!",
-          });
+        if (puzzleThree){
+          if (!swordGrabbed) {
+            document.getElementById("modal").style.visibility = "visible";
+            modal.dispatch({
+              type: "change",
+              value: "You picked up a sword!",
+            });
+          } else {
+            document.getElementById("modal").style.visibility = "visible";
+            modal.dispatch({
+              type: "change",
+              value: "You already have the sword!",
+            });
+          }
         } else {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You already have the sword!",
+            value: "The sword is wrapped in chain and a padlock. You'll need a key to open it.",
           });
         }
         break;
       case carpet:
-        console.log("carpet clicked!");
         if (puzzleTwo) {
           document.getElementById("mazePuzzle").style.visibility = "visible";
         } else if (puzzleThree) {
@@ -114,38 +117,27 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You can't do that right now",
+            value: "You pull back the carpet and find a maze under a glass floor. A small metal ball sits in the top right corner. If only you could move it.",
           });
         }
         break;
       case coffin:
-        console.log("coffin clicked!");
-        if (puzzleThree) {
+        if (swordPlaced) {
           document.getElementById("riddle").style.visibility = "visible";
         } else {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You can't do that right now",
+            value: "A Marble Coffin sits in the center of the room. You try to open it but it doesn't budge.",
           });
         }
         break;
       case scroll:
-        console.log("scroll clicked!");
-        if (scrollFound) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You already discovered this clue!",
+            value: "//Riddle Goes Here//",
           });
-        } else {
-          document.getElementById("modal").style.visibility = "visible";
-          modal.dispatch({
-            type: "change",
-            value: "You discovered a clue!",
-          });
-        }
-        document.getElementById("riddle").style.visibility = "visible";
     }
   };
 
