@@ -8,7 +8,7 @@ import RiddlePuzzle from "../RiddlePuzzle"
 
 const Gamescreen = () => {
   const game = useContext(GameContext)
-  // const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -128,7 +128,6 @@ const Gamescreen = () => {
   };
 
   return (
-    <GameContextProvider>
     <ModalContextProvider>
       <div style={imgStyle} alt="fantasy escape room">
         <div
@@ -162,7 +161,6 @@ const Gamescreen = () => {
         <ButtonPuzzle />
         <Modal />
     </ModalContextProvider>
-    </GameContextProvider>
   );
 };
 
