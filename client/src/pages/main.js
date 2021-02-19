@@ -1,4 +1,3 @@
-import MatchingGame from '../components/matchingGame/matching'
 import "./main.css";
 import React, { useState, useEffect } from "react";
 import Gamescreen from "../components/gamescreen/gamescreen";
