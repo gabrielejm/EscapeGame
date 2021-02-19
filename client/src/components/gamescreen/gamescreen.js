@@ -13,10 +13,8 @@ const Gamescreen = () => {
     puzzleOne,
     puzzleTwo,
     puzzleThree,
-    puzzleFour,
     swordGrabbed,
-    swordPlaced,
-    scrollFound,
+    swordPlaced
   } = game.completedAttributes;
 
   const modal = useContext(ModalContext);
@@ -53,8 +51,9 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You placed the sword!",
+            value: "You placed the sword! You hear the sound of stone moving behind you and notice a panel opened at the base of the coffin.",
           });
+          game.dispatch('swordPlaced')
         } else if (!swordGrabbed) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -89,6 +88,7 @@ const Gamescreen = () => {
               type: "change",
               value: "You picked up a sword!",
             });
+            modal.dispatch('swordGrabbed')
           } else {
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
