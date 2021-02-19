@@ -14,3 +14,5 @@ export const ModalContextProvider = props => {
     // Passes props down to children to be called later
     return <ModalContext.Provider value = {{modalAttributes, dispatch}}>{props.children}</ModalContext.Provider>
 }
+
+export default ModalContextProvider

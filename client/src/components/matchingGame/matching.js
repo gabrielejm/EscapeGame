@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import './matching.css'
 import Card from "./card"
 import faceOne from './images/faceOne.png'
@@ -6,11 +6,13 @@ import faceTwo from "./images/faceTwo.png";
 import faceThree from "./images/faceThree.png";
 import faceFour from "./images/faceFour.png";
 import faceFive from "./images/faceFive.png";
+import {ModalContext} from "../Modal/ModalContext"
 
 const MatchingGame = () => {
   const [game, setGame] = useState([]);
   const [flippedCount, setFlippedCount] = useState(0);
   const [flippedIndexes, setFlippedIndexes] = useState([]);
+  const modal = useContext(ModalContext)
   let gameFinished;
 
   const faces = [
@@ -72,6 +74,9 @@ const MatchingGame = () => {
   else {
     if (game.some((card) => card.flipped === false) != true) {
     console.log("you finished the matching game!")
+    document.getElementById('cards').style.visibility = "hidden"
+    document.getElementById('modal').style.visibility = "visible"
+    // modal.dispatch({type: 'change', value: "You Matched All the Faces" })
   }
     return (
       <div id="cards">
