@@ -17,6 +17,7 @@ const Gamescreen = () => {
     puzzleFour,
     swordGrabbed,
     swordPlaced,
+    scrollFound,
   } = game.completedAttributes;
 
   const modal = useContext(ModalContext);
@@ -61,7 +62,7 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You're missing an item...",
+            value: "You're missing something...",
           });
         } else if (swordPlaced) {
           document.getElementById("modal").style.visibility = "visible";
@@ -73,7 +74,15 @@ const Gamescreen = () => {
         break;
       case face:
         console.log("faces clicked!");
-        document.getElementById("cards").style.visibility = "visible";
+        if (puzzleOne) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("cards").style.visibility = "visible";
+        }
         break;
       case sword:
         console.log("sword clicked!");
@@ -122,12 +131,20 @@ const Gamescreen = () => {
         }
         break;
       case scroll:
-        console.log("scroll clicked");
-        document.getElementById("modal").style.visibility = "visible";
-        modal.dispatch({
-          type: "change",
-          value: "You discovered a clue!",
-        });
+        console.log("scroll clicked!");
+        if (scrollFound) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already discovered this clue!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You discovered a clue!",
+          });
+        }
     }
   };
 
