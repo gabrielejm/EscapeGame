@@ -120,6 +120,7 @@ const Gamescreen = () => {
         break;
       case coffin:
         console.log("coffin clicked!");
+<<<<<<< HEAD
         if (puzzleThree) {
           document.getElementById("riddle").style.visibility = "visible";
         } else {
@@ -145,6 +146,10 @@ const Gamescreen = () => {
             value: "You discovered a clue!",
           });
         }
+=======
+        document.getElementById('riddle').style.visibility = "visible"
+
+>>>>>>> main
     }
   };
 

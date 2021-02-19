@@ -11,6 +11,7 @@
   visibility: hidden;
 }
 
+<<<<<<< HEAD
 .box {
   height: 70%;
   width: 15%;
@@ -18,6 +19,16 @@
   border-width: 4px;
   border-color: black;
   display: inline-block;
+=======
+.box { 
+    height: 70%;
+    width: 15%;
+    font-size: x-large;
+    background-color: honeydew;
+    border-width: 4px;
+    border-color: black;
+    display: inline-block;
+>>>>>>> main
 }
 
 .row {
