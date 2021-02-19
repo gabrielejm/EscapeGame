@@ -26,6 +26,7 @@ const Gamescreen = () => {
     let sword = document.getElementById("swordClick");
     let carpet = document.getElementById("carpetClick");
     let coffin = document.getElementById("coffinClick");
+    let scroll = document.getElementById("scrollClick");
 
     switch (e.target) {
       case chest:
@@ -55,6 +56,9 @@ const Gamescreen = () => {
         break;
       case coffin:
         console.log("coffin clicked!");
+        break;
+      case scroll:
+        console.log("scroll clicked");
     }
   };
 
@@ -80,6 +84,19 @@ const Gamescreen = () => {
     right: "7%",
     top: "86%",
     transform: "rotate(" + "335deg" + ")",
+    cursor: "pointer",
+  };
+
+  const scrollClickStyle = {
+    backgroundColor: "yellow",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "5%",
+    height: "5%",
+    right: "24%",
+    top: "79%",
+    transform: "rotate(" + "30deg" + ")",
     cursor: "pointer",
   };
 
@@ -172,6 +189,11 @@ const Gamescreen = () => {
           id="coffinClick"
           onClick={handleClick}
           style={coffinClickStyle}
+        ></div>
+        <div
+          id="scrollClick"
+          onClick={handleClick}
+          style={scrollClickStyle}
         ></div>
       </div>
       <RiddlePuzzle />
