@@ -2,17 +2,25 @@ import React, { useState, useContext } from "react";
 import { GameContextProvider, GameContext } from "../../contexts/gameContext";
 import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
-import Modal from "../Modal/Modal"
+import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/matching";
-import RiddlePuzzle from "../RiddlePuzzle"
+import RiddlePuzzle from "../RiddlePuzzle";
 import { modalReducer } from "../Modal/ModalReducer";
 
 const Gamescreen = () => {
-  const game = useContext(GameContext)
-  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  const game = useContext(GameContext);
+  const {
+    puzzleOne,
+    puzzleTwo,
+    puzzleThree,
+    puzzleFour,
+    swordGrabbed,
+    swordPlaced,
+    scrollFound,
+  } = game.completedAttributes;
 
-  const modal = useContext(ModalContext)
+  const modal = useContext(ModalContext);
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -21,32 +29,123 @@ const Gamescreen = () => {
     let sword = document.getElementById("swordClick");
     let carpet = document.getElementById("carpetClick");
     let coffin = document.getElementById("coffinClick");
+    let scroll = document.getElementById("scrollClick");
 
     switch (e.target) {
       case chest:
         console.log("chest clicked!");
-        if (puzzleOne){
-          document.getElementById('buttonPuzzle').style.visibility = "visible"
-        } else{
-          document.getElementById('modal').style.visibility = "visible"
-          modal.dispatch({type: "change", value: "You can't do that right now"})
+        if (puzzleOne) {
+          document.getElementById("buttonPuzzle").style.visibility = "visible";
+        } else if (puzzleTwo) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You can't do that right now",
+          });
         }
         break;
       case armor:
         console.log("armor clicked!");
+        if (swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You placed the sword!",
+          });
+        } else if (!swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You're missing something...",
+          });
+        } else if (swordPlaced) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already placed the sword!",
+          });
+        }
         break;
       case face:
         console.log("faces clicked!");
-        document.getElementById('cards').style.visibility = "visible"
+        if (puzzleOne) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("cards").style.visibility = "visible";
+        }
         break;
       case sword:
         console.log("sword clicked!");
+        if (!swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You picked up a sword!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already have the sword!",
+          });
+        }
         break;
       case carpet:
         console.log("carpet clicked!");
+        if (puzzleTwo) {
+          document.getElementById("mazePuzzle").style.visibility = "visible";
+        } else if (puzzleThree) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You can't do that right now",
+          });
+        }
         break;
       case coffin:
         console.log("coffin clicked!");
+        if (puzzleThree) {
+          document.getElementById("riddle").style.visibility = "visible";
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You can't do that right now",
+          });
+        }
+        break;
+      case scroll:
+        console.log("scroll clicked!");
+        if (scrollFound) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already discovered this clue!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You discovered a clue!",
+          });
+        }
+        document.getElementById("riddle").style.visibility = "visible";
     }
   };
 
@@ -72,6 +171,19 @@ const Gamescreen = () => {
     right: "7%",
     top: "86%",
     transform: "rotate(" + "335deg" + ")",
+    cursor: "pointer",
+  };
+
+  const scrollClickStyle = {
+    backgroundColor: "yellow",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "5%",
+    height: "5%",
+    right: "24%",
+    top: "79%",
+    transform: "rotate(" + "30deg" + ")",
     cursor: "pointer",
   };
 
@@ -165,11 +277,16 @@ const Gamescreen = () => {
           onClick={handleClick}
           style={coffinClickStyle}
         ></div>
+        <div
+          id="scrollClick"
+          onClick={handleClick}
+          style={scrollClickStyle}
+        ></div>
       </div>
-        <RiddlePuzzle />
-        <ButtonPuzzle />
-        <MatchingGame />
-        <Modal />
+      <RiddlePuzzle />
+      <ButtonPuzzle />
+      <MatchingGame />
+      <Modal />
     </>
   );
 };
