@@ -8,20 +8,16 @@ import './pages/scoreboard.css'
 //             <div>Score:{ props.score }</div>
 //         </div>
 
-const scoreBoard = () => {
+// const scoreBoard = () => {
 
-    return (
-        <ViewScores>
-            <div className = "main" id = "scoreBoard">
+//     return (
+//         <ViewScores>
+//             <div className = "main" id = "scoreBoard">
 
                 
-            </div>
-        </ViewScores>
-    )
-}
-
-import React from 'react';
-
+//             </div>
+//         </ViewScores>
+//     
 
 export class ScoreBoard extends Component {
     return () {
@@ -32,6 +28,7 @@ export class ScoreBoard extends Component {
                         <tbody>
                             <tr>
                                 <td className="border-0">name</td>
+                                <td className="border-0">puzzle number</td>
                                 <td className="border-0">score</td>
                             </tr>
                         </tbody>
