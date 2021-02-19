@@ -1,10 +1,10 @@
-import React from "react";
-import "./App.css";
-import Main from "./pages/main";
-import { GameContext } from "./contexts/gameContext";
+import React from 'react';
+import './App.css';
+import Main from './pages/main';
+// import ScoreBoard from '../components/ScoreBoard'
 
 const App = () => {
-  return (
+return (
     <div>
       <Main />
     </div>
