@@ -11,10 +11,8 @@ export const GameContextProvider = props => {
     puzzleOne: false,
     puzzleTwo: false,
     puzzleThree: false,
-    puzzleFour: false,
     swordGrabbed: false,
-    swordPlaced: false,
-    scrollFound: false,
+    swordPlaced: false
   };
 
   //Creates the Reducer to change the state of completedPuzzles

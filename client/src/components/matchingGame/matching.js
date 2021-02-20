@@ -7,12 +7,15 @@ import faceThree from "./images/faceThree.png";
 import faceFour from "./images/faceFour.png";
 import faceFive from "./images/faceFive.png";
 import {ModalContext} from "../Modal/ModalContext"
+import {GameContext} from "../../contexts/gameContext"
 
 const MatchingGame = () => {
   const [game, setGame] = useState([]);
   const [flippedCount, setFlippedCount] = useState(0);
   const [flippedIndexes, setFlippedIndexes] = useState([]);
   const modal = useContext(ModalContext)
+  const gameCon = useContext(GameContext)
+  let gameFinished;
 
   const faces = [
     faceOne,
@@ -21,6 +24,13 @@ const MatchingGame = () => {
     faceFour,
     faceFive
   ];
+
+  const endGame = () => {
+    document.getElementById('cards').style.visibility = "hidden"
+    document.getElementById('modal').style.visibility = "visible"
+    modal.dispatch({type: 'change', value: "You match the last 2 faces and once you do, the chest on the other side of the room springs open." })
+    gameCon.dispatch('puzzleOne')
+  }
 
   useEffect(() => {
     const newSet = [];
@@ -48,6 +58,7 @@ const MatchingGame = () => {
 
   useEffect(() => {
     // Loads when the game variable changes
+    if(gameFinished) {endGame()}
   }, [game]);
 
  if (flippedIndexes.length === 2) {
@@ -72,10 +83,7 @@ const MatchingGame = () => {
   
   else {
     if (game.some((card) => card.flipped === false) != true) {
-    console.log("you finished the matching game!")
-    document.getElementById('cards').style.visibility = "hidden"
-    document.getElementById('modal').style.visibility = "visible"
-    // modal.dispatch({type: 'change', value: "You Matched All the Faces" })
+    gameFinished = true
   }
     return (
       <div id="cards">
