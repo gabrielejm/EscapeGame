@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
-import Timer from "../Timer/Timer";
+import Timer from "../Timer/timer";
 
 const Gamescreen = () => {
   const game = useContext(GameContext);

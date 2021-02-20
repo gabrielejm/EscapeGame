@@ -6,7 +6,7 @@ const StartModal = () => {
   const image =
     "https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png";
 
-  const startGame = () => {
+  const startGameButton = () => {
     console.log("start clicked!");
     document.getElementById("mainDiv").style.visibility = "visible";
     document.getElementById("startModal").style.visibility = "hidden";
@@ -42,7 +42,7 @@ const StartModal = () => {
             button to begin.
           </p>
           <button
-            onClick={() => startGame()}
+            onClick={() => startGameButton()}
             id="startButton"
             style={ButtonStyle}
           >

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./timer.css"
+import {startGameButton} from "../StartModal/StartModal"
 
 
 
