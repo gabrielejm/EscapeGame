@@ -250,7 +250,7 @@ const Gamescreen = () => {
 
   return (
     <>
-      <div style={imgStyle} alt="fantasy escape room">
+      <div id="gameImage" style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
           onClick={handleClick}
