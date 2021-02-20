@@ -79,3 +79,39 @@
     text-align: center;
     height: 50%;
 }
+
+#wrapper {
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#heading {
+    background-color: lightcoral; 
+    text-decoration-style: solid; 
+    color: #F8F8F8; width: 
+    40%; margin-top: 0px;
+     margin-bottom: 10px
+}
+
+#c {
+    margin-left:auto; 
+    margin-right:auto;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 10%;
+    font-size: large
+}
+
+#canvas {
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+#timerel {
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top:0px;
+    text-align: center;
+    width: 15%;
+    font-size: large
+}
