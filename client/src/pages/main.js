@@ -4,7 +4,11 @@ import Gamescreen from "../components/gamescreen/gamescreen";
 import GameContextProvider from '../contexts/gameContext'
 import ModalContextProvider from "../components/Modal/ModalContext"
 import SignIn from "../components/signin/signin"
+
 const Main = () => {
+  // useEffect(() => {
+  //   // Load in a high score or something here?
+  // }, []);
 
   return (
     <div>
@@ -14,15 +18,15 @@ const Main = () => {
       <div id="mainDiv">
         <h1>Welcome to our Escape Game</h1>
         <p>Play below!</p>
+
         <ModalContextProvider>
-        <GameContextProvider>
-          <Gamescreen />
-        </GameContextProvider>
+          <GameContextProvider>
+            <Gamescreen />
+          </GameContextProvider>
         </ModalContextProvider>
       </div>
     </div>
-  )
-
+  );
 };
 
 export default Main;
