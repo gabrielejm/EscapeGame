@@ -6,6 +6,10 @@ const StartModal = () => {
   const image =
     "https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png";
 
+  const startGame = () => {
+    console.log("start clicked!");
+  };
+
   const ModalStyle = {
     zIndex: "1",
     height: "60%",
@@ -20,10 +24,14 @@ const StartModal = () => {
   };
 
   const ButtonStyle = {
-    color: "blue",
+    color: "red",
+    backgroundColor: "black",
+    borderStyle: "solid",
+    borderColor: "red",
   };
+
   return (
-    <>
+    <div id="background">
       <div style={ModalStyle} id="startModal">
         <div id="modalContent">
           <h1>Escape from the Vampire's Castle!</h1>
@@ -31,10 +39,16 @@ const StartModal = () => {
             Search for clues and solve the puzzles to escape! Click the "Start"
             button to begin.
           </p>
-          <button style={ButtonStyle}>Start</button>
+          <button
+            onClick={() => startGame()}
+            id="startButton"
+            style={ButtonStyle}
+          >
+            Start
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
