@@ -6,6 +6,7 @@ import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
+import Timer from "../Timer/Timer";
 
 const Gamescreen = () => {
   const game = useContext(GameContext);
@@ -244,6 +245,9 @@ const Gamescreen = () => {
   return (
     <>
       <div style={imgStyle} alt="fantasy escape room">
+        <div>
+          <Timer />
+        </div>
         <div
           id="chestClick"
           onClick={handleClick}
