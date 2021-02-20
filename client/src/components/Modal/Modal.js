@@ -30,7 +30,9 @@ const Modal = () => {
         visibility: "hidden"
     }
     const textStyle = {
-        marginTop: "4%"
+        marginTop: "10%",
+        marginLeft: '5%',
+        width: '90%'
     }
 
     // Hides Modal
