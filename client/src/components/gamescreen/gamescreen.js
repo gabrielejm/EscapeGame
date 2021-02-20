@@ -244,41 +244,15 @@ const Gamescreen = () => {
 
   return (
     <>
-      <div style={imgStyle} alt="fantasy escape room">
-        <div>
-          <Timer />
-        </div>
-        <div
-          id="chestClick"
-          onClick={handleClick}
-          style={chestClickStyle}
-        ></div>
-        <div
-          id="armorClick"
-          onClick={handleClick}
-          style={armorClickStyle}
-        ></div>
+      <div id="gameImage" style={imgStyle} alt="fantasy escape room">
+        <div><Timer /></div>
+        <div id="chestClick" onClick={handleClick} style={chestClickStyle}></div>
+        <div id="armorClick" onClick={handleClick} style={armorClickStyle}></div>
         <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
-        <div
-          id="swordClick"
-          onClick={handleClick}
-          style={swordClickStyle}
-        ></div>
-        <div
-          id="carpetClick"
-          onClick={handleClick}
-          style={carpetClickStyle}
-        ></div>
-        <div
-          id="coffinClick"
-          onClick={handleClick}
-          style={coffinClickStyle}
-        ></div>
-        <div
-          id="scrollClick"
-          onClick={handleClick}
-          style={scrollClickStyle}
-        ></div>
+        <div id="swordClick" onClick={handleClick} style={swordClickStyle}></div>
+        <div id="carpetClick" onClick={handleClick} style={carpetClickStyle}></div>
+        <div id="coffinClick" onClick={handleClick} style={coffinClickStyle}></div>
+        <div id="scrollClick" onClick={handleClick} style={scrollClickStyle}></div>
       </div>
       <RiddlePuzzle />
       <ButtonPuzzle />

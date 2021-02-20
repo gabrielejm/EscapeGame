@@ -1,0 +1,49 @@
+/* #gameImage {
+}
+
+#chestClick {
+}
+
+#armorClick {
+}
+
+#swordClick {
+  backgroundColor: "pink",
+  opacity: 0.5,
+  borderRadius: "30px",
+  position: "absolute",
+  width: "5%",
+  height: "20%",
+  right: "21%",
+  top: "53%",
+  cursor: "pointer",
+}
+
+#carpetClick {
+  background-color: green;
+  opacity: 0.5;
+  border-radius: 30px;
+  position: absolute;
+  width: 23%;
+  height: 18%;
+  left: 30%;
+  top: 81%;
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+#coffinClick {
+  background-color: blue;
+  opacity: 0.5;
+  border-radius: 30px;
+  position: absolute;
+  width: 24%;
+  height: 22%;
+  right: 34%;
+  bottom: 21%;
+  transform: rotate(356deg);
+  cursor: pointer;
+}
+
+#scrollClick {
+} */
