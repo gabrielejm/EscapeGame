@@ -1,0 +1,81 @@
+#heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    margin: 0 auto;
+}
+
+#canvas {
+    background: white; 
+    display: block; 
+    margin: 0 auto;
+}
+
+#c {
+    background: lightblue;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+.modal-content{
+    position: relative;
+    background-color: lightblue;
+    margin: auto;
+    padding: 0;
+    border: 2px solid gray;
+    width: 25%;
+    box-shadow: 0 3px 7px 0 darkblue, 0 5px 21px 0 darkblue;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top: -325x; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+@keyframes animatetop {
+    from {top: -325x; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    height: 50%;
+}
+
+.modal-body {padding: 2px 16px}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    height: 50%;
+}
