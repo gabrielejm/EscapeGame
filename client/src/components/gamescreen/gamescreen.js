@@ -4,7 +4,7 @@ import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../matchingGame/matching";
+import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import { modalReducer } from "../Modal/ModalReducer";
 
