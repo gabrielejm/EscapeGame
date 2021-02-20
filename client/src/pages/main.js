@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <div>
       <div class="sidebar">
-      <SignIn />
+      {/* <SignIn /> */}
       </div>
       <div id="mainDiv">
         <h1>Welcome to our Escape Game</h1>

@@ -23,12 +23,12 @@ const Submit = () => {
                //Unhides the Modal and hides the Button Puzzle
               document.getElementById('modal').style.visibility = "visible"
               document.getElementById('buttonPuzzle').style.visibility = "hidden"
-              modal.dispatch({type: "change", value: "You did it!"})
-              game.dispatch('puzzleOne')
+              modal.dispatch({type: "change", value: "The board at the bottom of the chest springs open, revealing a magnetic rod."})
+              game.dispatch('puzzleTwo')
            } else {
                 document.getElementById('modal').style.visibility = "visible"
                 document.getElementById('buttonPuzzle').style.visibility = "hidden"
-                modal.dispatch({type: "change", value: "You failed"})
+                modal.dispatch({type: "change", value: "Nothing happened..."})
            }
     })
     return (
