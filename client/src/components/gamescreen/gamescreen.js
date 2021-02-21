@@ -102,26 +102,17 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-<<<<<<< HEAD
             value: "The sword is wrapped in chain and a brass padlock. You'll need a key to open it.",
-=======
-            value:
-              "The sword is wrapped in chain and a padlock. You'll need a key to open it.",
->>>>>>> main
           });
         }
         break;
       case carpet:
         if (puzzleTwo) {
           document.getElementById("modal").style.visibility = "visible";
-<<<<<<< HEAD
           modal.dispatch({type: 'change', 
           value: 'The ball locks into place at the end of the maze. Suddenly a tile springs open revealing a brass key underneath. You grab it and start to look for its lock.'
           })
           game.dispatch("puzzleThree")
-=======
-          game.dispatch("puzzleThree");
->>>>>>> main
         } else if (puzzleThree) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -150,19 +141,11 @@ const Gamescreen = () => {
         }
         break;
       case scroll:
-<<<<<<< HEAD
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: `You pick up a scroll and read it: "A pane of glass reflects the master's resting place, beneath it lies the answer to your salvation."`,
           });
-=======
-        document.getElementById("modal").style.visibility = "visible";
-        modal.dispatch({
-          type: "change",
-          value: "//Riddle Goes Here//",
-        });
->>>>>>> main
     }
   };
 
