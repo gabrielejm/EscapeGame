@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
-import { GameContextProvider, GameContext } from "../../contexts/gameContext";
-import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
+import React, { useContext } from "react";
+import { GameContext } from "../../contexts/gameContext";
+import { ModalContext} from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
