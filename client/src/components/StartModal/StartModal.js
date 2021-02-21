@@ -6,10 +6,19 @@ const StartModal = () => {
   const image =
     "https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png";
 
-  const startGame = () => {
+  const castleImage = "https://cdn.wallpapersafari.com/43/62/RyuP1v.jpg";
+
+  const startGameButton = () => {
     console.log("start clicked!");
     document.getElementById("mainDiv").style.visibility = "visible";
     document.getElementById("startModal").style.visibility = "hidden";
+  };
+
+  const gothicCastle = {
+    position: "absolute",
+    height: "50%",
+    width: "50%",
+    right: "25%",
   };
 
   const ModalStyle = {
@@ -26,10 +35,15 @@ const StartModal = () => {
   };
 
   const ButtonStyle = {
+    position: "absolute",
     color: "red",
     backgroundColor: "black",
     borderStyle: "solid",
     borderColor: "red",
+    borderWidth: "4px",
+    top: "85%",
+    right: "48%",
+    fontSize: "30px",
   };
 
   return (
@@ -38,11 +52,18 @@ const StartModal = () => {
         <div id="modalContent">
           <h1>Escape from the Vampire's Castle!</h1>
           <p>
-            Search for clues and solve the puzzles to escape! Click the "Start"
-            button to begin.
+            <b>
+              Search for clues and solve the puzzles to escape! Click the
+              "Start" button to begin.
+            </b>
           </p>
+          <img
+            style={gothicCastle}
+            alt="Spooky Gothic Castle"
+            src={castleImage}
+          ></img>
           <button
-            onClick={() => startGame()}
+            onClick={() => startGameButton()}
             id="startButton"
             style={ButtonStyle}
           >
