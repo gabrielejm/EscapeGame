@@ -1,8 +1,8 @@
-
-import React from 'react'
-import './pages/scoreboard.css'
+import React from "react";
+import "scoreboard.css";
 
 export class ScoreBoard extends Component {
+<<<<<<< HEAD
     return () {
         <div>
             <div className ="card">
@@ -22,4 +22,23 @@ export class ScoreBoard extends Component {
      </div>
     
     }
+=======
+  return() {
+    <div>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-borderless">
+            <tbody>
+              <tr>
+                <td className="border-0">name</td>
+                <td className="border-0">puzzle number</td>
+                <td className="border-0">score</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>;
+  }
+>>>>>>> main
 }
