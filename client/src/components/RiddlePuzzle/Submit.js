@@ -16,7 +16,7 @@ const Submit = () => {
     // Checks to see if answer is correct
     const submitAnswer = () => {
         // Defines the Answer
-        const correctAnswer = "dadde"
+        const correctAnswer = "SKULL"
         // Creates word from All Letters
         const word = letterOne + letterTwo + letterThree + letterFour + letterFive
 

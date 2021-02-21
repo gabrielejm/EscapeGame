@@ -22,4 +22,4 @@ export class ScoreBoard extends Component {
      </div>
     
     }
-
+}

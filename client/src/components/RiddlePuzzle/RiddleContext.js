@@ -6,7 +6,7 @@ export const RiddleContext = createContext();
 //Exports Component
 export const RiddleContextProvider = props => {
     // directory of letters for answer
-    const letters = ['a', 'b', 'c', 'd', 'e']
+    const letters = ['S', 'L', 'K', 'U', 'H', 'F', 'E']
 
     //Randomly generates letters for the button
     const randomLetter = (arr) =>{
