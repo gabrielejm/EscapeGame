@@ -4,24 +4,21 @@ import Gamescreen from "../components/gamescreen/gamescreen";
 import GameContextProvider from '../contexts/gameContext'
 import ModalContextProvider from "../components/Modal/ModalContext"
 import SignIn from "../components/signin/signin"
+import StartModal from "../components/StartModal/StartModal";
 
 const Main = () => {
-  // useEffect(() => {
-  //   // Load in a high score or something here?
-  // }, []);
+const [isActive, setIsActive] = useState(false);
 
   return (
     <div>
-      <div class="sidebar">
-        {/* <SignIn /> */}
-      </div>
+      <div class="sidebar">{/* <SignIn /> */}</div>
       <div id="mainDiv">
         <h1>Welcome to our Escape Game</h1>
         <p>Play below!</p>
-
+        <StartModal setIsActive={setIsActive}/>
         <ModalContextProvider>
           <GameContextProvider>
-            <Gamescreen />
+            <Gamescreen setIsActive={setIsActive} isActive={isActive}/>
           </GameContextProvider>
         </ModalContextProvider>
       </div>
