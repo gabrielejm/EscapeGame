@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
-import { GameContextProvider, GameContext } from "../../contexts/gameContext";
-import { ModalContext, ModalContextProvider } from "../Modal/ModalContext";
+import React, { useContext } from "react";
+import { GameContext } from "../../contexts/gameContext";
+import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
@@ -15,7 +15,7 @@ const Gamescreen = () => {
     puzzleTwo,
     puzzleThree,
     swordGrabbed,
-    swordPlaced
+    swordPlaced,
   } = game.completedAttributes;
 
   const modal = useContext(ModalContext);
@@ -52,9 +52,10 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You placed the sword! You hear the sound of stone moving behind you and notice a panel opened at the base of the coffin.",
+            value:
+              "You placed the sword! You hear the sound of stone moving behind you and notice a panel opened at the base of the coffin.",
           });
-          game.dispatch('swordPlaced')
+          game.dispatch("swordPlaced");
         } else if (!swordGrabbed) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -75,21 +76,22 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "As you examine the faces you see in the bottom right corner of one of them have 'GRRGG' written on it"
+            value:
+              "As you examine the faces you see in the bottom right corner of one of them have 'GRRGG' written on it",
           });
         } else {
           document.getElementById("cards").style.visibility = "visible";
         }
         break;
       case sword:
-        if (puzzleThree){
+        if (puzzleThree) {
           if (!swordGrabbed) {
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
               type: "change",
               value: "You picked up a sword!",
             });
-            game.dispatch('swordGrabbed')
+            game.dispatch("swordGrabbed");
           } else {
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
@@ -101,14 +103,15 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "The sword is wrapped in chain and a padlock. You'll need a key to open it.",
+            value:
+              "The sword is wrapped in chain and a padlock. You'll need a key to open it.",
           });
         }
         break;
       case carpet:
         if (puzzleTwo) {
           document.getElementById("modal").style.visibility = "visible";
-          game.dispatch("puzzleThree")
+          game.dispatch("puzzleThree");
         } else if (puzzleThree) {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
@@ -119,7 +122,8 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "You pull back the carpet and find a maze under a glass floor. A small metal ball sits in the top right corner. If only you could move it.",
+            value:
+              "You pull back the carpet and find a maze under a glass floor. A small metal ball sits in the top right corner. If only you could move it.",
           });
         }
         break;
@@ -130,16 +134,17 @@ const Gamescreen = () => {
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
-            value: "A Marble Coffin sits in the center of the room. You try to open it but it doesn't budge.",
+            value:
+              "A Marble Coffin sits in the center of the room. You try to open it but it doesn't budge.",
           });
         }
         break;
       case scroll:
-          document.getElementById("modal").style.visibility = "visible";
-          modal.dispatch({
-            type: "change",
-            value: "//Riddle Goes Here//",
-          });
+        document.getElementById("modal").style.visibility = "visible";
+        modal.dispatch({
+          type: "change",
+          value: "//Riddle Goes Here//",
+        });
     }
   };
 
