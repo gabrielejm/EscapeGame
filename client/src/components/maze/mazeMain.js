@@ -1,8 +1,6 @@
 import React from 'react';
 import '/maze.css';
 
-
-
 const MazeMain = () => {
 
         <div id= 'mazeRender'>
@@ -17,7 +15,7 @@ const MazeMain = () => {
                             </canvas>
                         <div id="timerel"></div>
     
-                    </div>
+                        </div>
     
                     <div id="myModal" class="modal">
     
@@ -25,15 +23,16 @@ const MazeMain = () => {
                     <div class="modal-content">
                         <div class="modal-header">
                             <span class="close">&times;</span>
-                                <h2 class="gamehead"></h2>
+                            <h2 class="gamehead"></h2>
                         </div>
+
                     <div class="modal-footer">
                         <h2 id="demo" onmouseover="" style="cursor:pointer;">Continue</h2>
                     </div>
                     </div>
                     
                     </div>
-                    </div>
+                </div>
             </div>
 
 var modal = document.getElementById('myModal');
