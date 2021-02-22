@@ -7,9 +7,9 @@ import StartModal from "./components/StartModal/StartModal";
 const App = () => {
   return (
     <div>
-      <StartModal />
-      <Main />
-      {/* <Demo /> */}
+      {/* <StartModal />
+      <Main /> */}
+      <Demo />
     </div>
   );
 };

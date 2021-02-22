@@ -1,0 +1,11 @@
+#demoScreen {
+    margin-left: 10%;
+    position: absolute;
+    height: 70%;
+    width: 75%;
+    border-style: solid;
+    border-width: 15px;
+    border-color: black;
+    background-image: url(../../images/escapeRoomBackground.png);
+    background-size: 100% 100%;
+}
