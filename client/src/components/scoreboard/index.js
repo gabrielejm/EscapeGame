@@ -30,7 +30,7 @@ export default function ScoreBoard() {
   const classes = useStyles();
 
   return (
-    <>
+    <div>
       <h1>Scoreboard</h1>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
@@ -55,6 +55,6 @@ export default function ScoreBoard() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 }
