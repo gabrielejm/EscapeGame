@@ -30,28 +30,31 @@ export default function ScoreBoard() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Username</TableCell>
-            <TableCell align="left">Score/Time</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.username}>
-              <TableCell component="th" scope="row">
-                {row.username}
-              </TableCell>
-              {/* <TableCell align="right">{row.calories}</TableCell>
+    <>
+      <h1>Scoreboard</h1>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Username</TableCell>
+              <TableCell align="left">Score/Time</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map(row => (
+              <TableRow key={row.username}>
+                <TableCell component="th" scope="row">
+                  {row.username}
+                </TableCell>
+                {/* <TableCell align="right">{row.calories}</TableCell>
               <TableCell align="right">{row.fat}</TableCell>
               <TableCell align="right">{row.carbs}</TableCell>
               <TableCell align="right">{row.protein}</TableCell> */}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 }
