@@ -10,17 +10,15 @@ const App = () => {
   return (
     <Router>
       <div>
-        <StartModal />
         <Switch>
           <Route exact path="/">
             <Main />
+            <StartModal />
           </Route>
           <Route path="/scoreboard">
             <ScoreBoard />
           </Route>
         </Switch>
-
-        {/* <ScoreBoard /> */}
       </div>
     </Router>
   );
