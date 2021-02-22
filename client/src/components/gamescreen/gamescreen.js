@@ -8,7 +8,7 @@ import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../Timer/timer";
 
-const Gamescreen = () => {
+const Gamescreen = ({ isActive, setIsActive }) => {
   const game = useContext(GameContext);
   const {
     puzzleOne,
@@ -250,7 +250,7 @@ const Gamescreen = () => {
   return (
     <>
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">
-        <div><Timer /></div>
+        <div><Timer setIsActive={setIsActive} isActive={isActive}/></div>
         <div id="chestClick" onClick={handleClick} style={chestClickStyle}></div>
         <div id="armorClick" onClick={handleClick} style={armorClickStyle}></div>
         <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
