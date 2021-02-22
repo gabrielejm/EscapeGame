@@ -19,6 +19,13 @@ const Gamescreen = () => {
 
   const modal = useContext(ModalContext);
 
+  const hideClickables = () => {
+    let hide = document.getElementsByClassName('clickable')
+    for ( let i = 0; i < hide.length; i++){
+      hide[i].style.visibility = 'hidden'
+    }
+  }
+
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
     let armor = document.getElementById("armorClick");
@@ -30,15 +37,19 @@ const Gamescreen = () => {
 
     switch (e.target) {
       case chest:
+        // Opens Button Puzzle
         if (puzzleOne) {
           document.getElementById("buttonPuzzle").style.visibility = "visible";
+          hideClickables()
         } else if (puzzleTwo) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You have already solved this puzzle!",
           });
         } else {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -46,8 +57,10 @@ const Gamescreen = () => {
           });
         }
         break;
+      // Unlocks Riddle Puzzle
       case armor:
         if (swordGrabbed) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -56,12 +69,14 @@ const Gamescreen = () => {
           });
           game.dispatch("swordPlaced");
         } else if (!swordGrabbed) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You're missing something...",
           });
         } else if (swordPlaced) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -69,9 +84,11 @@ const Gamescreen = () => {
           });
         }
         break;
+      // Opens Matching Game
       case face:
         console.log("faces clicked!");
         if (puzzleOne) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -80,11 +97,14 @@ const Gamescreen = () => {
           });
         } else {
           document.getElementById("cards").style.visibility = "visible";
+          hideClickables()
         }
         break;
+      // Puts Sword in Inventory
       case sword:
         if (puzzleThree) {
           if (!swordGrabbed) {
+          hideClickables()
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
               type: "change",
@@ -92,6 +112,7 @@ const Gamescreen = () => {
             });
             game.dispatch("swordGrabbed");
           } else {
+          hideClickables()
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
               type: "change",
@@ -99,6 +120,7 @@ const Gamescreen = () => {
             });
           }
         } else {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -106,20 +128,24 @@ const Gamescreen = () => {
           });
         }
         break;
+      // Opens Maze Puzzle
       case carpet:
         if (puzzleTwo) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({type: 'change', 
           value: 'The ball locks into place at the end of the maze. Suddenly a tile springs open revealing a brass key underneath. You grab it and start to look for its lock.'
           })
           game.dispatch("puzzleThree")
         } else if (puzzleThree) {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You have already solved this puzzle!",
           });
         } else {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -128,10 +154,13 @@ const Gamescreen = () => {
           });
         }
         break;
+      // Opens Riddle Puzzle
       case coffin:
         if (swordPlaced) {
+          hideClickables()
           document.getElementById("riddle").style.visibility = "visible";
         } else {
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -140,7 +169,9 @@ const Gamescreen = () => {
           });
         }
         break;
+      // Opens Riddle
       case scroll:
+          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -253,32 +284,38 @@ const Gamescreen = () => {
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
+          className="clickable"
           onClick={handleClick}
           style={chestClickStyle}
         ></div>
         <div
           id="armorClick"
+          className="clickable"
           onClick={handleClick}
           style={armorClickStyle}
         ></div>
         <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
         <div
           id="swordClick"
+          className="clickable"
           onClick={handleClick}
           style={swordClickStyle}
         ></div>
         <div
           id="carpetClick"
+          className="clickable"
           onClick={handleClick}
           style={carpetClickStyle}
         ></div>
         <div
           id="coffinClick"
+          className="clickable"
           onClick={handleClick}
           style={coffinClickStyle}
         ></div>
         <div
           id="scrollClick"
+          className="clickable"
           onClick={handleClick}
           style={scrollClickStyle}
         ></div>

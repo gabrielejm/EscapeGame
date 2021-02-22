@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Main from "./pages/main";
-// import ScoreBoard from '../components/ScoreBoard'
+import Demo from './pages/Demo'
 import StartModal from "./components/StartModal/StartModal";
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
     <div>
       <StartModal />
       <Main />
+      {/* <Demo /> */}
     </div>
   );
 };
