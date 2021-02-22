@@ -8,6 +8,7 @@ import MatchingGame from "../matchingGame/matching";
 import RiddlePuzzle from "../RiddlePuzzle";
 
 const Gamescreen = () => {
+  // Defines Game Context to help set order of Puzzles
   const game = useContext(GameContext);
   const {
     puzzleOne,
@@ -17,8 +18,10 @@ const Gamescreen = () => {
     swordPlaced,
   } = game.completedAttributes;
 
+  //Defines Modal Context to Open Modals
   const modal = useContext(ModalContext);
 
+  //Hides the Clickable Area while User is in Minigames
   const hideClickables = () => {
     let hide = document.getElementsByClassName('clickable')
     for ( let i = 0; i < hide.length; i++){
@@ -26,7 +29,9 @@ const Gamescreen = () => {
     }
   }
 
+  // Defines what users see when clicking on the divs
   const handleClick = e => {
+    //Variables
     let chest = document.getElementById("chestClick");
     let armor = document.getElementById("armorClick");
     let face = document.getElementById("faceClick");
@@ -34,22 +39,24 @@ const Gamescreen = () => {
     let carpet = document.getElementById("carpetClick");
     let coffin = document.getElementById("coffinClick");
     let scroll = document.getElementById("scrollClick");
-
+    // Hides Clickable Areas
+    hideClickables()
+    // Unhides Game/Modal depending on games finished and where user clicks
     switch (e.target) {
+      // Opens Button Puzzle
       case chest:
-        // Opens Button Puzzle
+        // Only Starts Puzzle if Matching Game is complete
         if (puzzleOne) {
           document.getElementById("buttonPuzzle").style.visibility = "visible";
-          hideClickables()
+        // Confirms Puzzle is Already Solved
         } else if (puzzleTwo) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You have already solved this puzzle!",
           });
+        // If no puzzles solved yet it won't open Button Puzzle
         } else {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -59,8 +66,8 @@ const Gamescreen = () => {
         break;
       // Unlocks Riddle Puzzle
       case armor:
+        // If User has the Sword unlocks the Riddle Puzzle at the coffin
         if (swordGrabbed) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -68,15 +75,15 @@ const Gamescreen = () => {
               "You placed the sword! You hear the sound of stone moving behind you and notice a panel opened at the base of the coffin.",
           });
           game.dispatch("swordPlaced");
+        // Without the sword the user is unable to do anything with the armor
         } else if (!swordGrabbed) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You're missing something...",
           });
+        // Once sword is used on Armor then nothing else to do with Armor
         } else if (swordPlaced) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -86,41 +93,41 @@ const Gamescreen = () => {
         break;
       // Opens Matching Game
       case face:
-        console.log("faces clicked!");
+        // Once All Faces are Matched it will give you the answer to the next puzzle
         if (puzzleOne) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value:
               "As you examine the faces you see in the bottom right corner of one of them have 'GRRGG' written on it",
           });
+        // Reveals Matching Game
         } else {
           document.getElementById("cards").style.visibility = "visible";
-          hideClickables()
         }
         break;
       // Puts Sword in Inventory
       case sword:
+        //Must first finish Maze Puzzle to Access Sword
         if (puzzleThree) {
+          // Grabs the Sword
           if (!swordGrabbed) {
-          hideClickables()
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
               type: "change",
               value: "You insert the brass key into the padlock and the chains clatter to the floor. You picked up a sword!",
             });
             game.dispatch("swordGrabbed");
+          // If already in User's Possession, reminds User
           } else {
-          hideClickables()
             document.getElementById("modal").style.visibility = "visible";
             modal.dispatch({
               type: "change",
               value: "You already have the sword!",
             });
           }
+        // Let's User know they aren't able to use it yet
         } else {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -130,22 +137,22 @@ const Gamescreen = () => {
         break;
       // Opens Maze Puzzle
       case carpet:
+        // Must finish Button Puzzle first
         if (puzzleTwo) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({type: 'change', 
           value: 'The ball locks into place at the end of the maze. Suddenly a tile springs open revealing a brass key underneath. You grab it and start to look for its lock.'
           })
           game.dispatch("puzzleThree")
+        // Reminds User they already used this puzzle
         } else if (puzzleThree) {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You have already solved this puzzle!",
           });
+        // Tells User about the Puzzle but not yet able to complete
         } else {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -156,11 +163,11 @@ const Gamescreen = () => {
         break;
       // Opens Riddle Puzzle
       case coffin:
+        // If Armor Puzzle finished
         if (swordPlaced) {
-          hideClickables()
           document.getElementById("riddle").style.visibility = "visible";
+        // If all other puzzles aren't finished you can't open the Coffin
         } else {
-          hideClickables()
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -171,7 +178,7 @@ const Gamescreen = () => {
         break;
       // Opens Riddle
       case scroll:
-          hideClickables()
+          // Gives Clue to final puzzle
           document.getElementById("modal").style.visibility = "visible";
           modal.dispatch({
             type: "change",
@@ -179,7 +186,7 @@ const Gamescreen = () => {
           });
     }
   };
-
+  // CSS for all Divs
   const imgStyle = {
     marginLeft: "12.5%",
     position: "absolute",
@@ -278,7 +285,7 @@ const Gamescreen = () => {
     transform: "rotate(" + "356deg" + ")",
     cursor: "pointer",
   };
-
+  // HTML for component
   return (
     <>
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">

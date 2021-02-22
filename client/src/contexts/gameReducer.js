@@ -27,12 +27,6 @@ export const gameReducer = (state, action) => {
                 ...state,
                 swordPlaced: true
             };
-        // case 'hide':
-        //     let hide = document.getElementsByClassName('clickable')
-        //     for ( let i = 0; i < hide.length; i++){
-        //         hide[i].style.visibility = 'hidden'
-        //       }
-        //     break;
         default:
             break;
     }
