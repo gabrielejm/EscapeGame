@@ -27,6 +27,11 @@ export const gameReducer = (state, action) => {
                 ...state,
                 swordPlaced: true
             };
+        case 'demo':
+            return{
+                ...state,
+                demo: true
+            };
         default:
             break;
     }
