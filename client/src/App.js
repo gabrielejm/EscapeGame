@@ -7,11 +7,21 @@ import Demo from "./components/DemoScreen";
 
 const App = () => {
   return (
-    <div>
-      <Main />
-      <ScoreBoard />
-      <Demo />
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route exact path="/scoreboard">
+            <ScoreBoard />
+          </Route>
+          <Route exact path="/demo">
+            <Demo />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
