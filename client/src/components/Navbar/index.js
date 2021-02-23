@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// const NavBar = (props) => {
-//     const [collapsed, setCollapsed] = useState(true);
-
-//     const toggleNavbar = () => setCollapsed(!collapsed);
-
-//     return (
-//         <div>
-//       <div>
-
-//         export default NavBar;
+const NavbarStyle = {
+  color: "red",
+  margin: "5px",
+};
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>Escape Game</h1>
+      {/* <h1>Escape Game</h1> */}
       <div className="links">
-        <Link to="/">Play</Link>
-        <Link to="/scoreboard">Scoreboard</Link>
-        <Link to="/demo">Puzzle Demos</Link>
+        <Link style={NavbarStyle} to="/">
+          Play
+        </Link>
+        <Link style={NavbarStyle} to="/scoreboard">
+          Scoreboard
+        </Link>
+        <Link style={NavbarStyle} to="/demo">
+          Puzzle Demos
+        </Link>
       </div>
     </nav>
   );
