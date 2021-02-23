@@ -19,6 +19,7 @@ const Navbar = () => {
       <div className="links">
         <Link to="/">Play</Link>
         <Link to="/scoreboard">Scoreboard</Link>
+        <Link to="/demo">Puzzle Demos</Link>
       </div>
     </nav>
   );
