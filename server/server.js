@@ -2,13 +2,23 @@ require('dotenv').config();
 
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose')
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const dbConnection = require('./config/connection');
 const passport = require('./config/passport');
 const path = require('path');
+const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+//mongoose connect
+mongoose.connect("mongodb://127.0.0.1:27017/details", {
+  useNewUrlParser: true
+});
+
+const connection = mongoose.connection;
+
 
 // Middlewares
 app.use(morgan('dev'));

@@ -12,7 +12,9 @@ const Modal = () => {
     const buttonStyle = {
         color: "red",
         backgroundColor: "#d4c79d",
-        marginLeft: "3%",
+        left: "15px",
+        top: "5px",
+        position: "absolute",
         borderColor: "#d4c79d",
 
     }
@@ -28,7 +30,9 @@ const Modal = () => {
         visibility: "hidden"
     }
     const textStyle = {
-        marginTop: "4%"
+        marginTop: "10%",
+        marginLeft: '5%',
+        width: '90%'
     }
 
     // Hides Modal

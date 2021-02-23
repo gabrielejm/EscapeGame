@@ -16,11 +16,16 @@ export const gameReducer = (state, action) => {
             return{
                 ...state,
                 puzzleThree: true
-            };   
-        case 'puzzleFour':
+            };
+        case 'swordGrabbed':
             return{
                 ...state,
-                puzzleFour: true
+                swordGrabbed: true
+            };
+        case 'swordPlaced':
+            return{
+                ...state,
+                swordPlaced: true
             };
         default:
             break;

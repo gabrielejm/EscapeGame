@@ -1,14 +1,18 @@
 import React from "react";
 import "./App.css";
 import Main from "./pages/main";
-import { GameContext } from "./contexts/gameContext";
+// import ScoreBoard from '../components/ScoreBoard'
+import StartModal from "./components/StartModal/StartModal";
+//import ScoreBoard from "./components/scoreBoard/index";
 
 const App = () => {
   return (
     <div>
+      <StartModal />
       <Main />
+      {/* <ScoreBoard /> */}
     </div>
-    );
-}
+  );
+};
 
 export default App;

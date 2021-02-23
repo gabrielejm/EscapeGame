@@ -1,13 +1,24 @@
-import React, { useState, useContext } from "react";
-import { GameContextProvider } from "../../contexts/gameContext";
-import { ModalContextProvider, GameContext } from "../Modal/ModalContext";
+import React, { useContext } from "react";
+import { GameContext } from "../../contexts/gameContext";
+import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
-import Modal from "../Modal/Modal"
+import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
+import MatchingGame from "../matchingGame/matching";
+import RiddlePuzzle from "../RiddlePuzzle";
+import Maze from "../maze/maze";
 
 const Gamescreen = () => {
-  const game = useContext(GameContext)
-  const {puzzleOne, puzzleTwo, puzzleThree, puzzleFour} = game.completedAttributes
+  const game = useContext(GameContext);
+  const {
+    puzzleOne,
+    puzzleTwo,
+    puzzleThree,
+    swordGrabbed,
+    swordPlaced,
+  } = game.completedAttributes;
+
+  const modal = useContext(ModalContext);
 
   const handleClick = e => {
     let chest = document.getElementById("chestClick");
@@ -16,25 +27,124 @@ const Gamescreen = () => {
     let sword = document.getElementById("swordClick");
     let carpet = document.getElementById("carpetClick");
     let coffin = document.getElementById("coffinClick");
+    let scroll = document.getElementById("scrollClick");
 
     switch (e.target) {
       case chest:
-        console.log("chest clicked!");
+        if (puzzleOne) {
+          document.getElementById("buttonPuzzle").style.visibility = "visible";
+        } else if (puzzleTwo) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "The chest won't open.",
+          });
+        }
         break;
       case armor:
-        console.log("armor clicked!");
+        if (swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value:
+              "You placed the sword! You hear the sound of stone moving behind you and notice a panel opened at the base of the coffin.",
+          });
+          game.dispatch("swordPlaced");
+        } else if (!swordGrabbed) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You're missing something...",
+          });
+        } else if (swordPlaced) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You already placed the sword!",
+          });
+        }
         break;
       case face:
         console.log("faces clicked!");
+        if (puzzleOne) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value:
+              "As you examine the faces you see in the bottom right corner of one of them have 'GRRGG' written on it",
+          });
+        } else {
+          document.getElementById("cards").style.visibility = "visible";
+        }
         break;
       case sword:
-        console.log("sword clicked!");
+        if (puzzleThree) {
+          if (!swordGrabbed) {
+            document.getElementById("modal").style.visibility = "visible";
+            modal.dispatch({
+              type: "change",
+              value: "You picked up a sword!",
+            });
+            game.dispatch("swordGrabbed");
+          } else {
+            document.getElementById("modal").style.visibility = "visible";
+            modal.dispatch({
+              type: "change",
+              value: "You already have the sword!",
+            });
+          }
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value:
+              "The sword is wrapped in chain and a padlock. You'll need a key to open it.",
+          });
+        }
         break;
       case carpet:
-        console.log("carpet clicked!");
+        if (puzzleTwo) {
+          document.getElementById("modal").style.visibility = "visible";
+          game.dispatch("puzzleThree");
+        } else if (puzzleThree) {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value: "You have already solved this puzzle!",
+          });
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value:
+              "You pull back the carpet and find a maze under a glass floor. A small metal ball sits in the top right corner. If only you could move it.",
+          });
+        }
         break;
       case coffin:
-        console.log("coffin clicked!");
+        if (swordPlaced) {
+          document.getElementById("riddle").style.visibility = "visible";
+        } else {
+          document.getElementById("modal").style.visibility = "visible";
+          modal.dispatch({
+            type: "change",
+            value:
+              "A Marble Coffin sits in the center of the room. You try to open it but it doesn't budge.",
+          });
+        }
+        break;
+      case scroll:
+        document.getElementById("modal").style.visibility = "visible";
+        modal.dispatch({
+          type: "change",
+          value: "//Riddle Goes Here//",
+        });
     }
   };
 
@@ -60,6 +170,19 @@ const Gamescreen = () => {
     right: "7%",
     top: "86%",
     transform: "rotate(" + "335deg" + ")",
+    cursor: "pointer",
+  };
+
+  const scrollClickStyle = {
+    backgroundColor: "yellow",
+    opacity: 0.5,
+    borderRadius: "30px",
+    position: "absolute",
+    width: "5%",
+    height: "5%",
+    right: "24%",
+    top: "79%",
+    transform: "rotate(" + "30deg" + ")",
     cursor: "pointer",
   };
 
@@ -125,9 +248,8 @@ const Gamescreen = () => {
   };
 
   return (
-    <GameContextProvider>
-    <ModalContextProvider>
-      <div style={imgStyle} alt="fantasy escape room">
+    <>
+      <div id="gameImage" style={imgStyle} alt="fantasy escape room">
         <div
           id="chestClick"
           onClick={handleClick}
@@ -154,9 +276,18 @@ const Gamescreen = () => {
           onClick={handleClick}
           style={coffinClickStyle}
         ></div>
+        <div
+          id="scrollClick"
+          onClick={handleClick}
+          style={scrollClickStyle}
+        ></div>
       </div>
-    </ModalContextProvider>
-    </GameContextProvider>
+      <RiddlePuzzle />
+      <ButtonPuzzle />
+      <MatchingGame />
+      <Modal />
+      <Maze/>
+    </>
   );
 };
 

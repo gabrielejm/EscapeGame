@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import './matching.css'
 import Card from "./card"
 import faceOne from './images/faceOne.png'
@@ -6,11 +6,15 @@ import faceTwo from "./images/faceTwo.png";
 import faceThree from "./images/faceThree.png";
 import faceFour from "./images/faceFour.png";
 import faceFive from "./images/faceFive.png";
+import {ModalContext} from "../Modal/ModalContext"
+import {GameContext} from "../../contexts/gameContext"
 
 const MatchingGame = () => {
   const [game, setGame] = useState([]);
   const [flippedCount, setFlippedCount] = useState(0);
   const [flippedIndexes, setFlippedIndexes] = useState([]);
+  const modal = useContext(ModalContext)
+  const gameCon = useContext(GameContext)
   let gameFinished;
 
   const faces = [
@@ -20,6 +24,13 @@ const MatchingGame = () => {
     faceFour,
     faceFive
   ];
+
+  const endGame = () => {
+    document.getElementById('cards').style.visibility = "hidden"
+    document.getElementById('modal').style.visibility = "visible"
+    modal.dispatch({type: 'change', value: "You match the last 2 faces and once you do, the chest on the other side of the room springs open." })
+    gameCon.dispatch('puzzleOne')
+  }
 
   useEffect(() => {
     const newSet = [];
@@ -47,6 +58,7 @@ const MatchingGame = () => {
 
   useEffect(() => {
     // Loads when the game variable changes
+    if(gameFinished) {endGame()}
   }, [game]);
 
  if (flippedIndexes.length === 2) {
@@ -71,7 +83,7 @@ const MatchingGame = () => {
   
   else {
     if (game.some((card) => card.flipped === false) != true) {
-    console.log("you finished the matching game!")
+    gameFinished = true
   }
     return (
       <div id="cards">
