@@ -8,12 +8,8 @@ import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../timer/timer";
 
-<<<<<<< HEAD
-const Gamescreen = () => {
+const Gamescreen = ({isActive, setIsActive}) => {
   // Defines Game Context to help set order of Puzzles
-=======
-const Gamescreen = ({ isActive, setIsActive }) => {
->>>>>>> main
   const game = useContext(GameContext);
   const {
     puzzleOne,
