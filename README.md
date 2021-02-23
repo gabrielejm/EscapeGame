@@ -11,6 +11,7 @@ four games to the end!
 Justin Gabriele, Conor McKoy, Danielle Wisen, Dairon Ferrar, Ben Cummings
 
 ## Requirements:
+*Clone Github repo
 *npm install
 *npm start
 
@@ -27,5 +28,6 @@ AUTH_SECRET=your_auth_secret_key
 MIT
 
 ## Deployment
+http://escape-game2021.herokuapp.com/
 
 ## Questions
