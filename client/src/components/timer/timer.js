@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./timer.css"
+import { TimerContext } from "./TimerContext";
 
 
-
-export const Timer = ({ isActive, setIsActive }) => {
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(45);
+export const Timer = () => {
+  const timerCon = useContext(TimerContext)
+  const {active, minutes, seconds} = timerCon.timerAttributes
   const [counter, setCounter] = useState(0)
-
-  console.log("is the timer activated?", isActive)
 
   useEffect(() => {
     let interval
-    if (isActive) {
+    if (active) {
       interval = setInterval(() => {
         if (seconds > 0) {
-          setSeconds(seconds - 1);
-          console.log("seconds - 1", seconds)
+          timerCon.dispatch({ type: "seconds", value: seconds - 1 });
         }
         if (seconds === 0) {
           if (minutes === 0) {
           clearInterval(interval)
           } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
+          timerCon.dispatch({ type: 'minutes', value: minutes - 1 });
+          timerCon.dispatch({type: 'seconds', value: 59});
           }
         }
         setCounter(counter => counter + 1);
       }, 1000);
-        if (minutes === 0 && seconds === 0 && isActive === true) {
-        console.log("game over!");
-        setIsActive(false);
+        if (minutes === 0 && seconds === 0 && active === true) {
+          console.log("game over!");
+          timerCon.dispatch({ type: "gameOver" })
+          document.getElementById("FinishModal").style.visibility = "visible";
       }
     }
     return () => {
       clearInterval(interval);
     };
-  }, [isActive, counter])
+  }, [active, counter])
 
 
 

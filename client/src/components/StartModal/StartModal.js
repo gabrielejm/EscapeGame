@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Modal from "../Modal/Modal";
 // import "StartModal.css";
+import {TimerContext} from "../timer/TimerContext"
 
-const StartModal = ({ setIsActive }) => {
+const StartModal = () => {
+  const timerCon = useContext(TimerContext)
   const image =
     "https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png";
 
@@ -11,7 +13,7 @@ const StartModal = ({ setIsActive }) => {
   const startGameButton = () => {
     document.getElementById("mainDiv").style.visibility = "visible";
     document.getElementById("startModal").style.visibility = "hidden";
-    setIsActive(true)
+    timerCon.dispatch({ type: "activate" })
   };
 
   const gothicCastle = {

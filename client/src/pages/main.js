@@ -5,6 +5,7 @@ import GameContextProvider from '../contexts/gameContext'
 import ModalContextProvider from "../components/Modal/ModalContext"
 import SignIn from "../components/signin/signin"
 import StartModal from "../components/StartModal/StartModal";
+import TimerContextProvider from "../components/timer/TimerContext"
 
 const Main = () => {
 const [isActive, setIsActive] = useState(false);
@@ -15,12 +16,14 @@ const [isActive, setIsActive] = useState(false);
       <div id="mainDiv">
         <h1>Welcome to our Escape Game</h1>
         <p>Play below!</p>
-        <StartModal setIsActive={setIsActive}/>
+        <TimerContextProvider>
+        <StartModal/>
         <ModalContextProvider>
           <GameContextProvider>
-            <Gamescreen setIsActive={setIsActive} isActive={isActive}/>
+            <Gamescreen/>
           </GameContextProvider>
         </ModalContextProvider>
+        </TimerContextProvider>
       </div>
     </div>
   );

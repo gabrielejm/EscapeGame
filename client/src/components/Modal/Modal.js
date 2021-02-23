@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import {ModalContext} from './ModalContext'
+import { ModalContext } from './ModalContext'
+import scroll from "../../images/scroll.png"
 let modal 
 
 const Modal = () => {
@@ -8,7 +9,7 @@ const Modal = () => {
     //allows us to insert the new messages into the modal
     const message = modal.modalAttributes.message
     //Styling the Pieces of the Component
-    const image = 'https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png'
+    const image = scroll
     const buttonStyle = {
         color: "red",
         backgroundColor: "#d4c79d",

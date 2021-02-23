@@ -7,9 +7,10 @@ import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../timer/timer";
+import FinishModal from "../FinishModal/FinishModal";
 import Maze from "../maze/maze";
 
-const Gamescreen = ({ isActive, setIsActive }) => {
+const Gamescreen = () => {
   // Defines Game Context to help set order of Puzzles
   const game = useContext(GameContext);
   const {
@@ -298,7 +299,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
     <>
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">
         <div>
-          <Timer setIsActive={setIsActive} isActive={isActive} />
+          <Timer/>
         </div>
         <div
           id="chestClick"
@@ -343,6 +344,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
       <MatchingGame />
       <Maze/>
       <Modal />
+      <FinishModal />
     </>
   );
 };
