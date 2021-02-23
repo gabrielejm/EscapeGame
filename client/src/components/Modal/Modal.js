@@ -35,9 +35,17 @@ const Modal = () => {
         width: '90%'
     }
 
-    // Hides Modal
+    const unhideClickables = () => {
+        let hide = document.getElementsByClassName('clickable')
+        for ( let i = 0; i < hide.length; i++){
+          hide[i].style.visibility = 'visible'
+        }
+      }
+
+    // Hides Modal and Unhides the Clickable Areas
     const hide = () => {
         document.getElementById('modal').style.visibility = "hidden"
+        unhideClickables()
     }
 
     //Returns the Component

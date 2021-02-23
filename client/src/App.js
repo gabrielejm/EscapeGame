@@ -9,6 +9,7 @@ const App = () => {
     <div>
       <Main />
       <ScoreBoard />
+      <Demo />
     </div>
   );
 };

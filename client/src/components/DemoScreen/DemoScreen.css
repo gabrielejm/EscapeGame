@@ -1,0 +1,46 @@
+#demoScreen {
+    margin-left: 10%;
+    position: absolute;
+    height: 70%;
+    width: 75%;
+    border-style: solid;
+    border-width: 15px;
+    border-color: black;
+    background-image: url(../../images/escapeRoomBackground.png);
+    background-size: 100% 100%;
+}
+
+#button {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    background-image: url(../../images/ButtonPuzzle.JPG);
+    background-size: 100% 100%;
+    margin-top: 3%;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+#match{
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    background-image: url(../../images/FaceMatch.JPG);
+    background-size: 100% 100%;
+    margin-top: 3%;
+    margin-left: 55%;
+    cursor: pointer;
+
+}
+
+#riddleDemo {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    background-image: url(../../images/RiddlePuzzle.JPG);
+    background-size: 100% 100%;
+    margin-top: 25%;
+    margin-left: 55%;
+    cursor: pointer;
+
+}
