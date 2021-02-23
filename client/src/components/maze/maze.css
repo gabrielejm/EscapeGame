@@ -6,7 +6,11 @@
     font-size: xx-large;
 }
 #heading{ margin: 0 auto}
-#canvas { background: lightblue; display: block; margin: 0 auto; }
+
+#canvas { background: lightblue; 
+        display: block; 
+        margin: 0 auto; }
+        
 #c { background: white; display: block; margin: 0 auto; }
 
 .modal {
