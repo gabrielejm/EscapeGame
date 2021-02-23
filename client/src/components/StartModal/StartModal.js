@@ -13,7 +13,7 @@ const StartModal = () => {
   const startGameButton = () => {
     document.getElementById("mainDiv").style.visibility = "visible";
     document.getElementById("startModal").style.visibility = "hidden";
-    timerCon.dispatch("activate")
+    timerCon.dispatch({ type: "activate" })
   };
 
   const gothicCastle = {
