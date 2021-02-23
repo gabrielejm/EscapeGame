@@ -144,9 +144,9 @@ const Gamescreen = () => {
       case carpet:
         // Must finish Button Puzzle first
         if (puzzleTwo) {
-          //document.getElementById("modal").style.visibility = "visible";
-          document.getElementById('gameImage').style.visibility = "hidden";
-          document.getElementById('maze').style.visibility = "visible";
+          document.getElementById("modal").style.visibility = "visible";
+          // document.getElementById('gameImage').style.visibility = "hidden";
+          // document.getElementById('maze').style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value:

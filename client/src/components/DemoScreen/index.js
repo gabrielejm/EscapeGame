@@ -4,6 +4,7 @@ import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle';
 import MatchingGame from '../matchingGame/MatchingGame';
 import Modal from '../Modal/Modal';
 import RiddlePuzzle from '../RiddlePuzzle';
+import Maze from '../maze/maze'
 import './DemoScreen.css'
 
 const DemoScreen = () => {
@@ -44,6 +45,10 @@ const DemoScreen = () => {
         match.style.visibility = "hidden";
         riddle.style.visibility = "hidden";
         break;
+      case maze:
+        mazeGame.style.visibility = 'visible';
+        document.getElementById('demoScreen').style.visibility ='hidden';
+        break;
       default:
         break;
     }
@@ -58,6 +63,7 @@ const DemoScreen = () => {
             <ButtonPuzzle />
             <MatchingGame />
             <RiddlePuzzle />
+            <Maze />
             <Modal />
         </div>
     )
