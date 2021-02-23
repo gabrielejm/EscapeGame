@@ -12,9 +12,16 @@ const Submit = () => {
     const puzzle = useContext(PuzzleContext)
     //Pulls Button Colors from Context
     const {button1, button2, button3, button4, button5} = puzzle.puzzleAttributes
+
+    const {demo} = game.completedAttributes
     //Checks to see if the current buttons colors are correct
     const submitAnswer = (()=> {
-        const correctAnswer = ['green', 'red', 'red', 'green', 'green']
+        let correctAnswer 
+        if (demo){
+            correctAnswer = ['red', 'green', 'red', 'green', 'red']
+        } else {
+            correctAnswer = ['green', 'red', 'red', 'green', 'green']
+        }
         if(button1 === correctAnswer[0] &&
            button2 === correctAnswer[1] &&
            button3 === correctAnswer[2] &&
@@ -23,7 +30,11 @@ const Submit = () => {
                //Unhides the Modal and hides the Button Puzzle
               document.getElementById('modal').style.visibility = "visible"
               document.getElementById('buttonPuzzle').style.visibility = "hidden"
-              modal.dispatch({type: "change", value: "The board at the bottom of the chest springs open, revealing a magnetic rod."})
+              if(demo){
+                modal.dispatch({type: "change", value: "You Solved the Puzzle"})
+              } else {
+                modal.dispatch({type: "change", value: "The board at the bottom of the chest springs open, revealing a magnetic rod."})
+              }
               game.dispatch('puzzleTwo')
            } else {
                 document.getElementById('modal').style.visibility = "visible"
