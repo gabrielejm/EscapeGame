@@ -5,10 +5,10 @@ import "./timer.css"
 
 export const Timer = ({ isActive, setIsActive }) => {
   const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(45);
+  const [seconds, setSeconds] = useState(30);
   const [counter, setCounter] = useState(0)
 
-  console.log("is the timer activated?", isActive)
+  // console.log("is the timer activated?", isActive)
 
   useEffect(() => {
     let interval
@@ -16,7 +16,7 @@ export const Timer = ({ isActive, setIsActive }) => {
       interval = setInterval(() => {
         if (seconds > 0) {
           setSeconds(seconds - 1);
-          console.log("seconds - 1", seconds)
+          // console.log("seconds - 1", seconds)
         }
         if (seconds === 0) {
           if (minutes === 0) {
