@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1>Escape Game</h1>
       <div className="links">
-        <Link to="/">Home</Link>
+        <Link to="/">Play</Link>
         <Link to="/scoreboard">Scoreboard</Link>
       </div>
     </nav>
