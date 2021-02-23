@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle';
-import MatchingGame from '../matchingGame/matching';
+import MatchingGame from '../matchingGame/MatchingGame';
 import Modal from '../Modal/Modal';
 import { ModalContext } from '../Modal/ModalContext';
 import RiddlePuzzle from '../RiddlePuzzle';
