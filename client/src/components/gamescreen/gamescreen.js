@@ -4,11 +4,16 @@ import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../matchingGame/matching";
+import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
+import Timer from "../timer/timer";
 
+<<<<<<< HEAD
 const Gamescreen = () => {
   // Defines Game Context to help set order of Puzzles
+=======
+const Gamescreen = ({ isActive, setIsActive }) => {
+>>>>>>> main
   const game = useContext(GameContext);
   const {
     puzzleOne,
@@ -289,6 +294,9 @@ const Gamescreen = () => {
   return (
     <>
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">
+        <div>
+          <Timer setIsActive={setIsActive} isActive={isActive} />
+        </div>
         <div
           id="chestClick"
           className="clickable"

@@ -1,14 +1,12 @@
 import React from "react";
 import "./App.css";
 import Main from "./pages/main";
-import Demo from './pages/Demo'
-import StartModal from "./components/StartModal/StartModal";
+import ScoreBoard from "./components/ScoreBoard";
 
 const App = () => {
   return (
     <div>
-      {/* <StartModal />
-      <Main /> */}
+      <Main />
       <Demo />
     </div>
   );
