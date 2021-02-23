@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import scroll from "../../images/scroll.png"
+import { TimerContext } from "../Timer/TimerContext"
 
 const FinishModal = () => {
+  const timerCon = useContext(TimerContext)
+  console.log(timerCon, "this is timer con")
+  const {minutes, seconds, isFinished} = timerCon.timerAttributes
   const image = scroll
   const ModalStyle = {
     zIndex: "1",
@@ -13,32 +17,38 @@ const FinishModal = () => {
     position: "absolute",
     right: "20%",
     top: "23%",
-    visibility: "visible",
+    visibility: "hidden",
   };
-  const ButtonStyle = {
-    position: "absolute",
-    color: "red",
-    backgroundColor: "black",
-    borderStyle: "solid",
-    borderColor: "red",
-    borderWidth: "4px",
-    top: "85%",
-    right: "43%",
-    fontSize: "30px",
-  };
+  const textStyle = {
+    padding: "30px"
+  }
+  // const ButtonStyle = {
+  //   position: "absolute",
+  //   color: "red",
+  //   backgroundColor: "black",
+  //   borderStyle: "solid",
+  //   borderColor: "red",
+  //   borderWidth: "4px",
+  //   top: "85%",
+  //   right: "43%",
+  //   fontSize: "30px",
+  // };
   return (
     <div id="background">
-      <div style={ModalStyle} id="startModal">
+      <div style={ModalStyle} id="FinishModal">
         <div id="modalContent">
-          <h1>Congratulations</h1>
+          {isFinished ? (<div><h1>Congratulations</h1>
           <p>
             <b>You escaped from the vampire's castle!</b>
-            {/* gameover if the timer runs out before you complete all the puzzles? */}
-            {/* show their score? time left x 2? */}
-          </p>
-          <button id="newGameButton" style={ButtonStyle}>
-            Play again
-          </button>
+            <b>You scored {(minutes * 100) + seconds}!</b>
+            </p></div>) : <div><p style={textStyle}><h1>Game Over</h1>
+              <b>You feel a gust of wind on your back and as you turn around a tall, shadowy figure lunges at you.
+              Your vision goes dark.</b>
+            </p></div>}
+         
+          {/* <button id="newGameButton" style={ButtonStyle}>
+            Play again?
+          </button> */}
         </div>
       </div>
     </div>
