@@ -7,6 +7,7 @@ import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../Timer/timer";
+import FinishModal from "../FinishModal/FinishModal";
 
 const Gamescreen = () => {
   // Defines Game Context to help set order of Puzzles
@@ -339,6 +340,7 @@ const Gamescreen = () => {
       <ButtonPuzzle />
       <MatchingGame />
       <Modal />
+      <FinishModal />
     </>
   );
 };
