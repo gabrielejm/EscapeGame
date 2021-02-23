@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import scroll from "../../images/scroll.png"
-import { TimerContext } from "../Timer/TimerContext"
+import { TimerContext } from "../timer/TimerContext"
 
 const FinishModal = () => {
   const timerCon = useContext(TimerContext)

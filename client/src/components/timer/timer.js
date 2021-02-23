@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./timer.css"
-import { TimerContext } from "../Timer/TimerContext";
+import { TimerContext } from "./TimerContext";
 
 
 export const Timer = () => {
   const timerCon = useContext(TimerContext)
   const {active, minutes, seconds} = timerCon.timerAttributes
-  // const [minutes, setMinutes] = useState(10);
-  // const [seconds, setSeconds] = useState(0);
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
@@ -16,7 +14,6 @@ export const Timer = () => {
       interval = setInterval(() => {
         if (seconds > 0) {
           timerCon.dispatch({ type: "seconds", value: seconds - 1 });
-          // console.log("seconds - 1", seconds)
         }
         if (seconds === 0) {
           if (minutes === 0) {

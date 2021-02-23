@@ -4,9 +4,9 @@ import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../MatchingGame/MatchingGame";
+import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
-import Timer from "../Timer/timer";
+import Timer from "../timer/timer";
 import FinishModal from "../FinishModal/FinishModal";
 import Maze from "../maze/maze";
 

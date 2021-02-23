@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {ModalContext} from '../Modal/ModalContext'
 import {GameContext} from '../../contexts/gameContext'
 import { RiddleContext } from "./RiddleContext"
-import {TimerContext} from "../Timer/TimerContext"
+import {TimerContext} from "../timer/TimerContext"
 
 const Submit = () => {
     // Define timer context
