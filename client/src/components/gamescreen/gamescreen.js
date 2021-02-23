@@ -205,7 +205,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const chestClickStyle = {
-    backgroundColor: "red",
+    // backgroundColor: "red",
     opacity: 0.5,
     borderRadius: "30px",
     position: "absolute",
@@ -218,7 +218,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const scrollClickStyle = {
-    backgroundColor: "yellow",
+    // backgroundColor: "yellow",
     opacity: 0.5,
     borderRadius: "30px",
     position: "absolute",
@@ -231,7 +231,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const armorClickStyle = {
-    backgroundColor: "purple",
+    // backgroundColor: "purple",
     opacity: 0.5,
     borderRadius: "30px",
     position: "absolute",
@@ -243,7 +243,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const faceClickStyle = {
-    backgroundColor: "orange",
+    // backgroundColor: "orange",
     opacity: 0.5,
     position: "absolute",
     width: "20%",
@@ -254,7 +254,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const swordClickStyle = {
-    backgroundColor: "pink",
+    // backgroundColor: "pink",
     opacity: 0.5,
     borderRadius: "30px",
     position: "absolute",
@@ -266,7 +266,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const carpetClickStyle = {
-    backgroundColor: "green",
+    // backgroundColor: "green",
     opacity: 0.5,
     position: "absolute",
     borderRadius: "30px",
@@ -279,7 +279,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
   };
 
   const coffinClickStyle = {
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     opacity: 0.5,
     borderRadius: "30px",
     position: "absolute",
