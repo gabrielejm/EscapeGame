@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import {ModalContext} from '../Modal/ModalContext'
 import {GameContext} from '../../contexts/gameContext'
-import {RiddleContext} from "./RiddleContext"
+import { RiddleContext } from "./RiddleContext"
+import {TimerContext} from "../Timer/TimerContext"
 
 const Submit = () => {
+    // Define timer context
+    const timerCon = useContext(TimerContext);
     // Defines Riddle Context
     const riddle = useContext(RiddleContext)
     // Defines Modal Context
@@ -25,8 +28,8 @@ const Submit = () => {
             document.getElementById('modal').style.visibility = "visible"
             document.getElementById('riddle').style.visibility = "hidden"
             modal.dispatch({type: "change", value: "You did it!"})
-            game.dispatch('puzzleTwo')
-            // setIsActive(false);
+            timerCon.dispatch({ type: "youWin" })
+            document.getElementById("FinishModal").style.visibility = "visible";
         } else {
             document.getElementById('modal').style.visibility = "visible"
             document.getElementById('riddle').style.visibility = "hidden"
