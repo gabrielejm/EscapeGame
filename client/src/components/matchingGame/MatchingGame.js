@@ -15,6 +15,7 @@ const MatchingGame = () => {
   const [flippedIndexes, setFlippedIndexes] = useState([]);
   const modal = useContext(ModalContext)
   const gameCon = useContext(GameContext)
+  const {demo} = gameCon.completedAttributes
   let gameFinished;
 
   const faces = [
@@ -28,7 +29,11 @@ const MatchingGame = () => {
   const endGame = () => {
     document.getElementById('cards').style.visibility = "hidden"
     document.getElementById('modal').style.visibility = "visible"
-    modal.dispatch({type: 'change', value: "You match the last 2 faces and once you do, the chest on the other side of the room springs open." })
+    if (demo){
+      modal.dispatch({type: 'change', value: "You matched all the faces!" })
+    } else {
+      modal.dispatch({type: 'change', value: "You match the last 2 faces and once you do, the chest on the other side of the room springs open." })
+    }
     gameCon.dispatch('puzzleOne')
   }
 
