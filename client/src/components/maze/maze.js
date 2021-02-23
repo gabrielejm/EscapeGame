@@ -9,8 +9,8 @@ const Maze = () => {
   <div id="wrapper" style="margin-left:auto; margin-right:auto;">
       <h1 id="heading" style="background-color: lightcoral; text-decoration-style: solid; color: #F8F8F8; width: 40%; margin-top: 0px; margin-bottom: 10px">Maze</h1>
       <div id="maze">
+      <button id="completedButton" style="position: relative; top: 220px; background-color: blue; color: white; font-size: large">Escape</button>
           <p style="text-align: center;margin-bottom: 10px font-size: 20px;">MAZE</p>
-          <button id="completedButton" style="position: relative; top: 220px; background-color: blue; color: white; font-size: large">Escape</button>
           <div id="c" style="margin-left:auto; margin-right:auto;margin-bottom: 10px;text-align: center;width: 10%;font-size: large"></div>
           <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto; position: relative; top: -400px; ">
           This text is displayed if your browser does not support HTML5 Canvas.
