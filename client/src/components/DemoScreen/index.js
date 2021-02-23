@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
-import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../matchingGame/MatchingGame";
-import Modal from "../Modal/Modal";
-import { ModalContext } from "../Modal/ModalContext";
-import RiddlePuzzle from "../RiddlePuzzle";
-import "./DemoScreen.css";
+import React, { useContext, useEffect } from 'react';
+import { GameContext } from '../../contexts/gameContext';
+import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle';
+import MatchingGame from '../matchingGame/MatchingGame';
+import Modal from '../Modal/Modal';
+import RiddlePuzzle from '../RiddlePuzzle';
+import './DemoScreen.css'
 
 const DemoScreen = () => {
-  const modal = useContext(ModalContext);
+    const game = useContext(GameContext)
+   
+    useEffect(() =>{
+      game.dispatch('demo')
+    }, [])
 
-  const startGame = e => {
+
+    const startGame = e => {
     let buttonPuzz = document.getElementById("buttonPuzzle");
     let faceMatch = document.getElementById("cards");
     let riddlePuzz = document.getElementById("riddle");
@@ -42,17 +47,17 @@ const DemoScreen = () => {
     }
   };
 
-  return (
-    <div id="demoScreen">
-      <div id="button" onClick={startGame}></div>
-      <div id="match" onClick={startGame}></div>
-      <div id="riddleDemo" onClick={startGame}></div>
-      <ButtonPuzzle />
-      <MatchingGame />
-      <RiddlePuzzle />
-      <Modal />
-    </div>
-  );
-};
+    return (
+        <div id = 'demoScreen'>
+            <div id = 'button' className= 'clickable' onClick = {startGame}></div>
+            <div id = 'match'  className= 'clickable' onClick = {startGame}></div>
+            <div id = 'riddleDemo'  className= 'clickable' onClick = {startGame}></div>
+            <ButtonPuzzle />
+            <MatchingGame />
+            <RiddlePuzzle />
+            <Modal />
+        </div>
+    )
+}
 
 export default DemoScreen;
