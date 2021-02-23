@@ -16,10 +16,17 @@ const Submit = () => {
     // Destructures Letters from Riddle Context
     const {letterOne, letterTwo, letterThree, letterFour, letterFive} = riddle.riddleAttributes
 
+    const {demo} = game.completedAttributes
+
     // Checks to see if answer is correct
     const submitAnswer = () => {
         // Defines the Answer
-        const correctAnswer = "SKULL"
+        let correctAnswer 
+        if (demo) {
+            correctAnswer = "SHELF"
+        } else {
+           correctAnswer = "SKULL"
+        }
         // Creates word from All Letters
         const word = letterOne + letterTwo + letterThree + letterFour + letterFive
 
@@ -33,7 +40,7 @@ const Submit = () => {
         } else {
             document.getElementById('modal').style.visibility = "visible"
             document.getElementById('riddle').style.visibility = "hidden"
-            modal.dispatch({type: "change", value: "You didn't do it :( "})   
+            modal.dispatch({type: "change", value: "Nothing happened... "})   
         }
 
     }
