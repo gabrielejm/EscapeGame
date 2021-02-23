@@ -2,7 +2,7 @@ export const riddleReducer = (state, action) => {
     // Destructures values from state
     const {letterOne, letterTwo, letterThree, letterFour, letterFive } = state
     // Defines the letters used in the answer
-    const letters = ['a', 'b', 'c', 'd', 'e']
+    const letters = ['S', 'L', 'K', 'U', 'H', 'F', 'E']
     let letter
 
     //Toggles the Letter shown 
@@ -12,7 +12,7 @@ export const riddleReducer = (state, action) => {
             letters.map((lett,i) => {
                if( lett === letterOne) {
                    //if at the end of the array, switches to the front
-                   if (lett === 'e'){
+                   if (lett === 'E'){
                         letter = letters[0]
                    } else {
                        letter = letters[i+1]
@@ -29,7 +29,7 @@ export const riddleReducer = (state, action) => {
             letters.map((lett,i) => {
                if( lett === letterTwo) {
                    //if at the end of the array, switches to the front
-                   if (lett === 'e'){
+                   if (lett === 'E'){
                         letter = letters[0]
                    } else {
                        letter = letters[i+1]
@@ -46,7 +46,7 @@ export const riddleReducer = (state, action) => {
             letters.map((lett,i) => {
                if( lett === letterThree) {
                    //if at the end of the array, switches to the front
-                   if (lett === 'e'){
+                   if (lett === 'E'){
                         letter = letters[0]
                    } else {
                        letter = letters[i+1]
@@ -62,7 +62,7 @@ export const riddleReducer = (state, action) => {
             letters.map((lett,i) => {
                if( lett === letterFour) {
                    //if at the end of the array, switches to the front
-                   if (lett === 'e'){
+                   if (lett === 'E'){
                         letter = letters[0]
                    } else {
                        letter = letters[i+1]
@@ -79,7 +79,7 @@ export const riddleReducer = (state, action) => {
             letters.map((lett,i) => {
                if( lett === letterFive) {
                    //if at the end of the array, switches to the front
-                   if (lett === 'e'){
+                   if (lett === 'E'){
                         letter = letters[0]
                    } else {
                        letter = letters[i+1]
