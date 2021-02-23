@@ -8,25 +8,34 @@ import './DemoScreen.css'
 
 const DemoScreen = () => {
     const modal = useContext(ModalContext)
-
+    
     const startGame = e => {
+        let buttonPuzz = document.getElementById('buttonPuzzle')
+        let faceMatch = document.getElementById('cards')
+        let riddlePuzz = document.getElementById('riddle')
         let button = document.getElementById('button');
         let match = document.getElementById('match');
         let riddle = document.getElementById('riddleDemo');
-        let buttonPuzz = document.getElementById('buttonPuzzle').style.visibility;
-        let faceMatch = document.getElementById('cards').style.visibility;
-        let riddlePuzz = document.getElementById('riddle').style.visibility;
-        let modalVis = document.getElementById('modal').style.visibility;
 
         switch (e.target) {
             case button:
-                buttonPuzz = 'visible';
+                console.log('button clicked')
+                buttonPuzz.style.visibility = 'visible';
+                button.style.visibility = 'hidden';
+                match.style.visibility = 'hidden';
+                riddle.style.visibility = 'hidden';
                 break;
             case match:
-                faceMatch = 'visible';
+                faceMatch.style.visibility = 'visible';
+                button.style.visibility = 'hidden';
+                match.style.visibility = 'hidden';
+                riddle.style.visibility = 'hidden';
                 break;
             case riddle:
-                riddlePuzz = 'visible';
+                riddlePuzz.style.visibility = 'visible';
+                button.style.visibility = 'hidden';
+                match.style.visibility = 'hidden';
+                riddle.style.visibility = 'hidden';
                 break;
             default:
                 break;
@@ -38,7 +47,7 @@ const DemoScreen = () => {
             <div id = 'button' onClick = {startGame}></div>
             <div id = 'match' onClick = {startGame}></div>
             <div id = 'riddleDemo' onClick = {startGame}></div>
-            <ButtonPuzzle  demo = {true}/>
+            <ButtonPuzzle />
             <MatchingGame />
             <RiddlePuzzle />
             <Modal />
