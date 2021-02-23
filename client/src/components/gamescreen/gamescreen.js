@@ -7,6 +7,7 @@ import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../timer/timer";
+import Maze from "../maze/maze";
 
 const Gamescreen = ({ isActive, setIsActive }) => {
   // Defines Game Context to help set order of Puzzles
@@ -142,7 +143,9 @@ const Gamescreen = ({ isActive, setIsActive }) => {
       case carpet:
         // Must finish Button Puzzle first
         if (puzzleTwo) {
-          document.getElementById("modal").style.visibility = "visible";
+          //document.getElementById("modal").style.visibility = "visible";
+          document.getElementById('gameImage').style.visibility = "hidden";
+          document.getElementById('maze').style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value:
@@ -338,6 +341,7 @@ const Gamescreen = ({ isActive, setIsActive }) => {
       <RiddlePuzzle />
       <ButtonPuzzle />
       <MatchingGame />
+      <Maze/>
       <Modal />
     </>
   );
