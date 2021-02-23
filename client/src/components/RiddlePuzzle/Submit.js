@@ -26,11 +26,13 @@ const Submit = () => {
             document.getElementById('riddle').style.visibility = "hidden"
             modal.dispatch({type: "change", value: "You did it!"})
             game.dispatch('puzzleTwo')
+            // setIsActive(false);
         } else {
             document.getElementById('modal').style.visibility = "visible"
             document.getElementById('riddle').style.visibility = "hidden"
             modal.dispatch({type: "change", value: "You didn't do it :( "})   
         }
+
     }
 
     // Defines HTML of Button
