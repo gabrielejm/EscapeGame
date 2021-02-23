@@ -15,37 +15,37 @@ const DemoScreen = () => {
 
 
     const startGame = e => {
-        let buttonPuzz = document.getElementById('buttonPuzzle')
-        let faceMatch = document.getElementById('cards')
-        let riddlePuzz = document.getElementById('riddle')
-        let button = document.getElementById('button');
-        let match = document.getElementById('match');
-        let riddle = document.getElementById('riddleDemo');
+    let buttonPuzz = document.getElementById("buttonPuzzle");
+    let faceMatch = document.getElementById("cards");
+    let riddlePuzz = document.getElementById("riddle");
+    let button = document.getElementById("button");
+    let match = document.getElementById("match");
+    let riddle = document.getElementById("riddleDemo");
 
-        switch (e.target) {
-            case button:
-                console.log('button clicked')
-                buttonPuzz.style.visibility = 'visible';
-                button.style.visibility = 'hidden';
-                match.style.visibility = 'hidden';
-                riddle.style.visibility = 'hidden';
-                break;
-            case match:
-                faceMatch.style.visibility = 'visible';
-                button.style.visibility = 'hidden';
-                match.style.visibility = 'hidden';
-                riddle.style.visibility = 'hidden';
-                break;
-            case riddle:
-                riddlePuzz.style.visibility = 'visible';
-                button.style.visibility = 'hidden';
-                match.style.visibility = 'hidden';
-                riddle.style.visibility = 'hidden';
-                break;
-            default:
-                break;
-        }
+    switch (e.target) {
+      case button:
+        console.log("button clicked");
+        buttonPuzz.style.visibility = "visible";
+        button.style.visibility = "hidden";
+        match.style.visibility = "hidden";
+        riddle.style.visibility = "hidden";
+        break;
+      case match:
+        faceMatch.style.visibility = "visible";
+        button.style.visibility = "hidden";
+        match.style.visibility = "hidden";
+        riddle.style.visibility = "hidden";
+        break;
+      case riddle:
+        riddlePuzz.style.visibility = "visible";
+        button.style.visibility = "hidden";
+        match.style.visibility = "hidden";
+        riddle.style.visibility = "hidden";
+        break;
+      default:
+        break;
     }
+  };
 
     return (
         <div id = 'demoScreen'>
@@ -60,4 +60,4 @@ const DemoScreen = () => {
     )
 }
 
-export default DemoScreen
+export default DemoScreen;
