@@ -3,14 +3,14 @@ import './maze.css'
  
 import InnerHTML from 'dangerously-set-html-content'
  
-function Maze() {
- 
+const Maze = () => {
+
   const maze = `
   <section>
   <div id="wrapper" style="margin-left:auto; margin-right:auto;">
       <h1 id="heading" style="background-color: lightcoral; text-decoration-style: solid; color: #F8F8F8; width: 40%; margin-top: 0px; margin-bottom: 10px">Maze</h1>
       <div id="maze">
-          <p style="text-align: center;margin-bottom: 10px">Finsih This Maze to Continue the Game!</p>
+          <p style="text-align: center;margin-bottom: 10px font-size: 20px;">Can you Escape?</p>
           <div id="c" style="margin-left:auto; margin-right:auto;margin-bottom: 10px;text-align: center;width: 10%;font-size: large"></div>
 
           <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto">
@@ -33,7 +33,7 @@ function Maze() {
                   <h2 id="demo" onmouseover="" style="cursor:pointer;">Continue</h2>
               </div>
           </div>
-
+          <button id="completed">Click once you finish the Maze"</button>
       </div>
 
 
@@ -391,14 +391,21 @@ m.init();
 m.add_edges();
 m.gen_maze();
 m.draw_canvas("canvas");
+
       
-  </script>
+</script>
 </section>
  
   `
- 
+  const completedMaze  = {
+    visibility: 'hidden'
+  }
+
   return (
-    <InnerHTML html={maze} />
+    <div>
+    <InnerHTML html={maze} style={completedMaze}/>
+    <button className="completedButton">Completed</button>
+    </div>
   )
 }
 

@@ -110,16 +110,18 @@ const Gamescreen = () => {
         break;
       case carpet:
         if (puzzleTwo) {
-          document.getElementById("modal").style.visibility = "visible";
-          game.dispatch("puzzleThree");
+          //document.getElementById("modal").style.visibility = "visible";
+          //game.dispatch("puzzleThree");
+          document.getElementById('gameImage').style.visibility = "hidden";
+          document.getElementById('maze').style.visibility = "visible";
         } else if (puzzleThree) {
-          document.getElementById("modal").style.visibility = "visible";
+          document.getElementById("gameImage").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value: "You have already solved this puzzle!",
           });
         } else {
-          document.getElementById("modal").style.visibility = "visible";
+          document.getElementById("gameImage").style.visibility = "visible";
           modal.dispatch({
             type: "change",
             value:
@@ -285,8 +287,8 @@ const Gamescreen = () => {
       <RiddlePuzzle />
       <ButtonPuzzle />
       <MatchingGame />
-      <Modal />
       <Maze/>
+      <Modal />
     </>
   );
 };
