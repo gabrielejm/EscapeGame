@@ -3,7 +3,7 @@ import "./App.css";
 import Main from "./pages/main";
 import ScoreBoard from "./components/ScoreBoard";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Demo from "./components/DemoScreen";
+import Demo from "./pages/Demo";
 import NavBar from "./components/Navbar";
 
 const App = () => {
