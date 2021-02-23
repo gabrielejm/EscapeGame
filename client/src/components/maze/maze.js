@@ -1,6 +1,5 @@
 import React from 'react'
 import './maze.css'
- 
 import InnerHTML from 'dangerously-set-html-content'
  
 const Maze = () => {
@@ -10,9 +9,9 @@ const Maze = () => {
   <div id="wrapper" style="margin-left:auto; margin-right:auto;">
       <h1 id="heading" style="background-color: lightcoral; text-decoration-style: solid; color: #F8F8F8; width: 40%; margin-top: 0px; margin-bottom: 10px">Maze</h1>
       <div id="maze">
-          <p style="text-align: center;margin-bottom: 10px font-size: 20px;">Can you Escape?</p>
+          <p style="text-align: center;margin-bottom: 10px font-size: 20px;">MAZE</p>
+          <button id="completedButton">Escape</button>
           <div id="c" style="margin-left:auto; margin-right:auto;margin-bottom: 10px;text-align: center;width: 10%;font-size: large"></div>
-
           <canvas id="canvas" width="523" height="523" style="margin-left:auto; margin-right:auto">
           This text is displayed if your browser does not support HTML5 Canvas.
       </canvas>
@@ -33,7 +32,6 @@ const Maze = () => {
                   <h2 id="demo" onmouseover="" style="cursor:pointer;">Continue</h2>
               </div>
           </div>
-          <button id="completed">Click once you finish the Maze"</button>
       </div>
 
 
@@ -402,10 +400,7 @@ m.draw_canvas("canvas");
   }
 
   return (
-    <div>
     <InnerHTML html={maze} style={completedMaze}/>
-    <button className="completedButton">Completed</button>
-    </div>
   )
 }
 
