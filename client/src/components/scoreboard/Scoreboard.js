@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import "./ScoreBoard.css";
 
 const useStyles = makeStyles({
   table: {
@@ -31,7 +32,7 @@ export default function ScoreBoard() {
 
   return (
     <div>
-      <h1>Scoreboard</h1>
+      <h1 id="scoreboard-head">Scoreboard</h1>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -46,10 +47,6 @@ export default function ScoreBoard() {
                 <TableCell component="th" scope="row">
                   {row.username}
                 </TableCell>
-                {/* <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell> */}
               </TableRow>
             ))}
           </TableBody>
