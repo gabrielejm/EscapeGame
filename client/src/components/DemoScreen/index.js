@@ -18,6 +18,7 @@ const DemoScreen = () => {
     let buttonPuzz = document.getElementById("buttonPuzzle");
     let faceMatch = document.getElementById("cards");
     let riddlePuzz = document.getElementById("riddle");
+    let mazePuzz = document.getElementById("maze");
     let maze = document.getElementById('mazeDemo')
     let button = document.getElementById("button");
     let match = document.getElementById("match");
