@@ -9,6 +9,7 @@ import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../timer/timer";
 
 const Gamescreen = ({ isActive, setIsActive }) => {
+  // Defines Game Context to help set order of Puzzles
   const game = useContext(GameContext);
   const {
     puzzleOne,
