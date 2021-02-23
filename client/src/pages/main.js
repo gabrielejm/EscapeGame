@@ -5,7 +5,7 @@ import GameContextProvider from '../contexts/gameContext'
 import ModalContextProvider from "../components/Modal/ModalContext"
 import SignIn from "../components/signin/signin"
 import StartModal from "../components/StartModal/StartModal";
-import TimerContextProvider from "../components/Timer/TimerContext"
+import TimerContextProvider from "../components/timer/TimerContext"
 
 const Main = () => {
 const [isActive, setIsActive] = useState(false);

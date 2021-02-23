@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 // import Modal from "../Modal/Modal";
 // import "StartModal.css";
-import {TimerContext} from "../Timer/TimerContext"
+import {TimerContext} from "../timer/TimerContext"
 
 const StartModal = () => {
   const timerCon = useContext(TimerContext)
