@@ -4,10 +4,11 @@ import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../matchingGame/matching";
+import MatchingGame from "../MatchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
+import Timer from "../Timer/timer";
 
-const Gamescreen = () => {
+const Gamescreen = ({ isActive, setIsActive }) => {
   const game = useContext(GameContext);
   const {
     puzzleOne,
@@ -249,37 +250,14 @@ const Gamescreen = () => {
   return (
     <>
       <div id="gameImage" style={imgStyle} alt="fantasy escape room">
-        <div
-          id="chestClick"
-          onClick={handleClick}
-          style={chestClickStyle}
-        ></div>
-        <div
-          id="armorClick"
-          onClick={handleClick}
-          style={armorClickStyle}
-        ></div>
+        <div><Timer setIsActive={setIsActive} isActive={isActive}/></div>
+        <div id="chestClick" onClick={handleClick} style={chestClickStyle}></div>
+        <div id="armorClick" onClick={handleClick} style={armorClickStyle}></div>
         <div id="faceClick" onClick={handleClick} style={faceClickStyle}></div>
-        <div
-          id="swordClick"
-          onClick={handleClick}
-          style={swordClickStyle}
-        ></div>
-        <div
-          id="carpetClick"
-          onClick={handleClick}
-          style={carpetClickStyle}
-        ></div>
-        <div
-          id="coffinClick"
-          onClick={handleClick}
-          style={coffinClickStyle}
-        ></div>
-        <div
-          id="scrollClick"
-          onClick={handleClick}
-          style={scrollClickStyle}
-        ></div>
+        <div id="swordClick" onClick={handleClick} style={swordClickStyle}></div>
+        <div id="carpetClick" onClick={handleClick} style={carpetClickStyle}></div>
+        <div id="coffinClick" onClick={handleClick} style={coffinClickStyle}></div>
+        <div id="scrollClick" onClick={handleClick} style={scrollClickStyle}></div>
       </div>
       <RiddlePuzzle />
       <ButtonPuzzle />

@@ -2,7 +2,7 @@ import React from "react";
 // import Modal from "../Modal/Modal";
 // import "StartModal.css";
 
-const StartModal = () => {
+const StartModal = ({ setIsActive }) => {
   const image =
     "https://www.pngfind.com/pngs/m/377-3773029_9-blank-scroll-banner-png-for-free-download.png";
 
@@ -12,6 +12,7 @@ const StartModal = () => {
     console.log("start clicked!");
     document.getElementById("mainDiv").style.visibility = "visible";
     document.getElementById("startModal").style.visibility = "hidden";
+    setIsActive(true)
   };
 
   const gothicCastle = {
