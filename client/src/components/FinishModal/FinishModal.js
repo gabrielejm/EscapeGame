@@ -32,7 +32,7 @@ const FinishModal = () => {
         <div id="modalContent">
           <h1>Congratulations</h1>
           <p>
-            <b>You escaped from the vampires castle!</b>
+            <b>You escaped from the vampire's castle!</b>
             {/* gameover if the timer runs out before you complete all the puzzles? */}
             {/* show their score? time left x 2? */}
           </p>
