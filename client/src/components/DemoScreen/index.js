@@ -4,7 +4,6 @@ import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle';
 import MatchingGame from '../matchingGame/MatchingGame';
 import Modal from '../Modal/Modal';
 import RiddlePuzzle from '../RiddlePuzzle';
-import Maze from '../maze/maze'
 import './DemoScreen.css'
 
 const DemoScreen = () => {
@@ -19,8 +18,7 @@ const DemoScreen = () => {
     let buttonPuzz = document.getElementById("buttonPuzzle");
     let faceMatch = document.getElementById("cards");
     let riddlePuzz = document.getElementById("riddle");
-    let mazeGame = document.getElementById("maze");
-    let maze = document.getElementById("mazeDemo");
+    let maze = document.getElementById('mazeDemo')
     let button = document.getElementById("button");
     let match = document.getElementById("match");
     let riddle = document.getElementById("riddleDemo");
@@ -32,22 +30,22 @@ const DemoScreen = () => {
         button.style.visibility = "hidden";
         match.style.visibility = "hidden";
         riddle.style.visibility = "hidden";
+        maze.style.visibility = "hidden";
+
         break;
       case match:
         faceMatch.style.visibility = "visible";
         button.style.visibility = "hidden";
         match.style.visibility = "hidden";
         riddle.style.visibility = "hidden";
+        maze.style.visibility = "hidden";
         break;
       case riddle:
         riddlePuzz.style.visibility = "visible";
         button.style.visibility = "hidden";
         match.style.visibility = "hidden";
         riddle.style.visibility = "hidden";
-        break;
-      case maze:
-        mazeGame.style.visibility = 'visible';
-        document.getElementById('demoScreen').style.visibility ='hidden';
+        maze.style.visibility = "hidden";
         break;
       default:
         break;
@@ -63,7 +61,6 @@ const DemoScreen = () => {
             <ButtonPuzzle />
             <MatchingGame />
             <RiddlePuzzle />
-            <Maze />
             <Modal />
         </div>
     )
