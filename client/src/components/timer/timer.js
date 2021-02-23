@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./timer.css"
+import { TimerContext } from "../Timer/TimerContext";
 
 
-
-export const Timer = ({ isActive, setIsActive }) => {
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(30);
+export const Timer = () => {
+  const timerCon = useContext(TimerContext)
+  const {active} = timerCon.timerAttributes
+  const [minutes, setMinutes] = useState(10);
+  const [seconds, setSeconds] = useState(0);
   const [counter, setCounter] = useState(0)
 
   // console.log("is the timer activated?", isActive)
 
   useEffect(() => {
     let interval
-    if (isActive) {
+    if (active) {
       interval = setInterval(() => {
         if (seconds > 0) {
           setSeconds(seconds - 1);
@@ -28,15 +30,15 @@ export const Timer = ({ isActive, setIsActive }) => {
         }
         setCounter(counter => counter + 1);
       }, 1000);
-        if (minutes === 0 && seconds === 0 && isActive === true) {
+        if (minutes === 0 && seconds === 0 && active === true) {
         console.log("game over!");
-        setIsActive(false);
+        timerCon.dispatch("end")
       }
     }
     return () => {
       clearInterval(interval);
     };
-  }, [isActive, counter])
+  }, [active, counter])
 
 
 
