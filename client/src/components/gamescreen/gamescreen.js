@@ -197,7 +197,9 @@ const Gamescreen = () => {
   };
   // CSS for all Divs
   const imgStyle = {
+    zIndex: '0',
     marginLeft: "12.5%",
+    // marginTop: "5%",
     position: "absolute",
     height: "70%",
     width: "75%",
