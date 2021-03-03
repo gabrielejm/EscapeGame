@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { GameContext } from '../../contexts/gameContext';
 import ButtonPuzzle from '../ButtonPuzzle/ButtonPuzzle';
-import MatchingGame from '../MatchingGame/matchingGame';
+import MatchingGame from '../matchingGame/MatchingGame';
 import Modal from '../Modal/Modal';
 import RiddlePuzzle from '../RiddlePuzzle';
 import './DemoScreen.css'
