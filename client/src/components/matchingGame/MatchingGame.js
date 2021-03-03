@@ -87,7 +87,7 @@ const MatchingGame = () => {
   if (game.length === 0) return <div>error loading game</div>;
   
   else {
-    if (game.some((card) => card.flipped === false) != true) {
+    if (game.some((card) => card.flipped === false) !== true) {
     gameFinished = true
   }
     return (
