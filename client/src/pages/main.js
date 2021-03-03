@@ -14,8 +14,6 @@ const [isActive, setIsActive] = useState(false);
     <div>
       <div class="sidebar">{/* <SignIn /> */}</div>
       <div id="mainDiv">
-        <h1>Welcome to our Escape Game</h1>
-        <p>Play below!</p>
         <TimerContextProvider>
         <StartModal/>
         <ModalContextProvider>
