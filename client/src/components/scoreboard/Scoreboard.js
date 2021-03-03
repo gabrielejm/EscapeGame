@@ -31,9 +31,9 @@ export default function ScoreBoard() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div id="scoreBoard">
       <h1 id="scoreboard-head">Scoreboard</h1>
-      <TableContainer component={Paper}>
+      <TableContainer  component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
