@@ -3,4 +3,11 @@
   width: 100%;
   overflow: hidden;
   /* visibility: hidden; */
+  color: white;
+  margin-top: 1%;
+}
+
+#demo p {
+  margin-bottom: 1%;
+  font-weight: bold;
 }

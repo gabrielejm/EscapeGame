@@ -1,20 +1,14 @@
-h1,
-p {
-  text-align: center;
-}
 
 html {
   overflow: hidden;
-  background-color: #2b4162;
-  background-image: linear-gradient(
-    315deg,
-    #12100e 7%,
-    #2b4162 65%,
-    #12100e 93%
-  );
+  /* background-color: #2b4162; */
+  /* background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%); */
+  /* background: linear-gradient(145deg,#f81f01,#ee076e); */
+  background: linear-gradient(to right, #000000 0%, #850000 100%);
   background-repeat: no-repeat;
   height: 100vh;
 }
+
 
 #mainDiv {
   height: 100%;

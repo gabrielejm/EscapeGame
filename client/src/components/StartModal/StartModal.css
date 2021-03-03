@@ -1,1 +1,90 @@
 
+#startModal {
+  visibility: visible;
+  width: 62%;
+  height: 78%;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+div#parStyle {
+  margin: 0.5rem;
+  padding-left: 4%;
+  padding-right: 4%;
+  line-height: 2rem;
+  font-size: 1.15rem;
+  text-align: justify;
+}
+
+p#startSentence {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#buttonStyle {
+  margin: 1rem;
+}
+
+button#buttonStyle {
+  background-image: linear-gradient(to right, #870000 0%, #190A05  55%);
+  color: white;
+}
+#buttonStyle:hover {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 399px) {
+  #startModal {
+   width: 100%;
+   height: 90%;
+   margin: -0.5rem;
+  }
+  #parStyle {
+    line-height: 1.25rem;
+    top: 24%;
+    font-size: 0.9rem;
+  }
+  #buttonStyle {
+    bottom: 20%;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  #startModal {
+   width: 100%;
+   height: 90%;
+   margin: -0.5rem;
+   background-size: 105% 100%;
+  }
+  #parStyle {
+    line-height: 1.25rem;
+    top: 24%;
+    font-size: 1rem;
+  }
+  #buttonStyle {
+    bottom: 18%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1250px) {
+  #startModal {
+   width: 80%;
+   height: 90%;
+   margin-left: 10%;
+  }
+
+}
+
+#paperComp {
+  background: #1d1d24;
+  margin-top: 10%;
+  /* background: #212529; */
+  color: #c6c9d8;
+  padding: 1.5rem;
+  border-radius: 6rem;
+}
+
+img {
+  height: 30%;
+  width: 30%;
+}

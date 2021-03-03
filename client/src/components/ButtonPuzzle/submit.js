@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import {PuzzleContext} from './PuzzleContext'
-import {ModalContext} from '../Modal/ModalContext'
-import {GameContext} from '../../contexts/gameContext'
+import React, { useContext } from 'react';
+import { PuzzleContext } from './PuzzleContext';
+import { ModalContext } from '../Modal/ModalContext';
+import { GameContext } from '../../contexts/gameContext';
 
 const Submit = () => {
     //Calls Game context
@@ -47,4 +47,4 @@ const Submit = () => {
     )
 }
 
-export default Submit
+export default Submit;

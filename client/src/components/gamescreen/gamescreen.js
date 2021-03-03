@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
-import Timer from "../timer/timer";
+import Timer from "../timer/Timer";
 import FinishModal from "../FinishModal/FinishModal";
 import Maze from "../maze/maze";
 
@@ -197,7 +197,9 @@ const Gamescreen = () => {
   };
   // CSS for all Divs
   const imgStyle = {
+    zIndex: '0',
     marginLeft: "12.5%",
+    marginTop: "3%",
     position: "absolute",
     height: "70%",
     width: "75%",

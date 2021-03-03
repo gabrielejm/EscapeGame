@@ -1,7 +1,14 @@
 #nav-style {
-  background-color: black;
+  background: #0e0e11;
 }
 
 .links {
-  color: red;
+  color: #ee076e;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.links:hover {
+  color: rgb(167, 0, 167);
 }

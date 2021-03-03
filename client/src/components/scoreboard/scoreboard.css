@@ -1,0 +1,14 @@
+#scoreboard-head {
+  margin: 30px;
+  display: block;
+  align-items: center;
+  color: white;
+}
+
+div#scoreBoard {
+  align-items: center;
+  display: block;
+  width: 56%;
+  margin-left: 22%;
+  margin-top: 3%;
+}

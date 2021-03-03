@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import './ButtonPuzzle.css'
-import {PuzzleContext} from './PuzzleContext'
+import React, { useContext } from 'react';
+import './ButtonPuzzle.css';
+import { PuzzleContext } from './PuzzleContext';
 
 const Button = ({button}) => {
     //Calls Puzzle Context
