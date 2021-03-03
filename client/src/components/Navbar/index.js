@@ -26,18 +26,14 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar id="nav-style" position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+        <h3>Escape Game</h3>
+          <Typography variant="p" className={classes.title}>
             <Link className="links" to="/">
               Play
             </Link>
-          </Typography>
-
-          <Typography variant="h6" className={classes.title}>
             <Link className="links" to="/scoreboard">
               Scoreboard
             </Link>
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
             <Link className="links" to="/demo">
               Puzzle Demos
             </Link>
