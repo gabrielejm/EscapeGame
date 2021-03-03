@@ -4,7 +4,7 @@ import { ModalContext } from "../Modal/ModalContext";
 import gameImage from "../../images/escapeRoomBackground.png";
 import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
-import MatchingGame from "../MatchingGame/matchingGame";
+import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
 import Timer from "../timer/Timer";
 import FinishModal from "../FinishModal/FinishModal";
@@ -199,7 +199,7 @@ const Gamescreen = () => {
   const imgStyle = {
     zIndex: '0',
     marginLeft: "12.5%",
-    // marginTop: "5%",
+    marginTop: "3%",
     position: "absolute",
     height: "70%",
     width: "75%",
