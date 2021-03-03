@@ -1,14 +1,14 @@
 import React from "react";
-import Button from './Button'
+import Button from './Button';
 import Submit from "./submit";
-import PuzzleContextProvider from './PuzzleContext'
-import "./ButtonPuzzle.css"
+import PuzzleContextProvider from './PuzzleContext';
+import "./ButtonPuzzle.css";
 
 const ButtonPuzzle = () => {
 
     return (
     <PuzzleContextProvider>
-        <div className = "main" id = "buttonPuzzle">
+        <div className="main" id="buttonPuzzle">
             <Button button = 'button1'/>
             <Button button = 'button2'/>
             <Button button = 'button3'/>
@@ -22,4 +22,4 @@ const ButtonPuzzle = () => {
     )
 };
 
-export default ButtonPuzzle
+export default ButtonPuzzle;

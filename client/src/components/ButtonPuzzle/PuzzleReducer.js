@@ -1,8 +1,8 @@
 export const puzzleReducer = (state, action) => {
     //Deconstructs buttons from state
-    const {button1, button2, button3, button4, button5} = state
+    const { button1, button2, button3, button4, button5 } = state;
     //Used to change color of buttons
-    let color
+    let color;
 
     //Toggles the color of the buttons
     switch (action) {

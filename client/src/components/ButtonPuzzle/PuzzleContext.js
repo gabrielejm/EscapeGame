@@ -1,5 +1,5 @@
 import React, { useReducer, createContext } from "react";
-import {puzzleReducer} from './PuzzleReducer'
+import { puzzleReducer } from './PuzzleReducer';
 // Exports Context
 export const PuzzleContext = createContext();
 
