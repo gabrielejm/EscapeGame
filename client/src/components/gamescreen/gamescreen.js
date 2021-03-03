@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import ButtonPuzzle from "../ButtonPuzzle/ButtonPuzzle";
 import MatchingGame from "../matchingGame/MatchingGame";
 import RiddlePuzzle from "../RiddlePuzzle";
-import Timer from "../timer/Timer";
+import Timer from "../timer/timer.js";
 import FinishModal from "../FinishModal/FinishModal";
 import Maze from "../maze/maze";
 
